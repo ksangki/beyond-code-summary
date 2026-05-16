@@ -1,0 +1,1091 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="author" content="김상기"><meta name="description" content="코드 너머의 시리즈 세 권을 한 권에 압축한 약 70쪽 요약본. 시리즈 입구이자 출구."><title>코드 너머의 시리즈 — 세 권의 결을 한 권에</title><style>:root{--bg:#fafaf8;--fg:#1a1a1a;--accent:#d6336c;--muted:#6b7280;--border:#e5e5e0;--code-bg:#f3f3ee;--toc-bg:#fff;--max-w:740px}@media(prefers-color-scheme:dark){:root{--bg:#141418;--fg:#e5e5e5;--accent:#f06595;--muted:#9ca3af;--border:#2e2e2e;--code-bg:#1e1e1e;--toc-bg:#1c1c1c}}*{box-sizing:border-box;margin:0;padding:0}html{font-size:18px;scroll-behavior:smooth}body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--fg);line-height:1.85}.hero{text-align:center;padding:5rem 1.5rem 4rem;border-bottom:1px solid var(--border);max-width:900px;margin:0 auto}.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}.hero .subtitle{font-size:1.15rem;color:var(--accent);font-weight:500;margin-bottom:1.5rem}.hero .meta{font-size:.85rem;color:var(--muted)}.wrapper{display:flex;max-width:1100px;margin:0 auto;gap:2rem}nav#TOC{position:sticky;top:1.5rem;align-self:flex-start;width:280px;flex-shrink:0;max-height:calc(100vh - 3rem);overflow-y:auto;padding:1.5rem 1rem;font-size:.78rem;line-height:1.6;background:var(--toc-bg);border-right:1px solid var(--border);border-radius:0 8px 8px 0}nav#TOC ul{list-style:none}nav#TOC>ul>li{margin-bottom:.6rem}nav#TOC ul ul{padding-left:1rem;margin-top:.2rem}nav#TOC a{color:var(--muted);text-decoration:none;transition:color .15s}nav#TOC a:hover{color:var(--accent)}main{flex:1;min-width:0;max-width:var(--max-w);padding:2.5rem 1.5rem 6rem}h1,h2,h3,h4{font-weight:700;letter-spacing:-.01em}h1{font-size:1.8rem;margin:3.5rem 0 1.2rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}h2{font-size:1.35rem;margin:2.5rem 0 .8rem;color:var(--accent)}h3{font-size:1.1rem;margin:1.8rem 0 .6rem}p{margin-bottom:1rem}blockquote{border-left:3px solid var(--accent);padding:.8rem 1.2rem;margin:1.2rem 0;background:var(--code-bg);border-radius:0 6px 6px 0;color:var(--muted);font-size:.95rem}code{font-family:'JetBrains Mono','Fira Code',monospace;font-size:.85em;background:var(--code-bg);padding:.15em .4em;border-radius:4px}pre{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:1.2rem;overflow-x:auto;margin:1.2rem 0;font-size:.82rem;line-height:1.6}pre code{background:none;padding:0}table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.9rem}th,td{border:1px solid var(--border);padding:.6rem .8rem;text-align:left}th{background:var(--code-bg);font-weight:600}ul,ol{margin:.8rem 0;padding-left:1.5rem}li{margin-bottom:.3rem}hr{border:none;border-top:1px solid var(--border);margin:3rem 0}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.back-top{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;background:var(--accent);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center}.back-top.show{opacity:.8}.back-top:hover{opacity:1}@media(max-width:860px){.wrapper{flex-direction:column}nav#TOC{position:relative;top:0;width:100%;max-height:none;border-right:none;border-bottom:1px solid var(--border);border-radius:0}main{padding:1.5rem 1rem 4rem}.hero{padding:3rem 1rem 2.5rem}.hero h1{font-size:1.8rem}}</style></head><body>
+<header class="hero">
+  <h1>코드 너머의 시리즈</h1>
+  <div class="subtitle">세 권의 결을 한 권에</div>
+  <div class="meta">저자: 김상기 · 2026 · 시리즈 요약본 · v1.0.0</div>
+</header>
+<div class="wrapper">
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#코드-너머의-시리즈" id="toc-코드-너머의-시리즈">코드
+너머의 시리즈</a>
+<ul>
+<li><a href="#세-권의-결을-한-권에" id="toc-세-권의-결을-한-권에">세
+권의 결을 한 권에</a></li>
+<li><a href="#목차" id="toc-목차">목차</a></li>
+</ul></li>
+<li><a href="#책을-펴내며" id="toc-책을-펴내며">책을 펴내며</a>
+<ul>
+<li><a href="#이-요약본이-다루는-것" id="toc-이-요약본이-다루는-것">이
+요약본이 다루는 것</a></li>
+<li><a href="#누가-읽으면-좋은가" id="toc-누가-읽으면-좋은가">누가
+읽으면 좋은가</a></li>
+<li><a href="#어떻게-읽으면-좋은가" id="toc-어떻게-읽으면-좋은가">어떻게
+읽으면 좋은가</a></li>
+</ul></li>
+<li><a href="#프롤로그.-시리즈가-그린-한-풍경"
+id="toc-프롤로그.-시리즈가-그린-한-풍경">프롤로그. 시리즈가 그린 한
+풍경</a>
+<ul>
+<li><a href="#시간-좌표" id="toc-시간-좌표">시간 좌표</a></li>
+<li><a href="#시리즈가-묶는-세-차원"
+id="toc-시리즈가-묶는-세-차원">시리즈가 묶는 세 차원</a></li>
+<li><a href="#이-요약본이-다루는-순서"
+id="toc-이-요약본이-다루는-순서">이 요약본이 다루는 순서</a></li>
+</ul></li>
+<li><a href="#부.-코드-너머의-시대-사람의-내면"
+id="toc-부.-코드-너머의-시대-사람의-내면">1부. 코드 너머의 시대 — 사람의
+내면</a>
+<ul>
+<li><a href="#던진-질문" id="toc-던진-질문">던진 질문</a></li>
+<li><a href="#결정적-데이터" id="toc-결정적-데이터">결정적
+데이터</a></li>
+<li><a href="#시리즈-i의-핵심-9개-장"
+id="toc-시리즈-i의-핵심-9개-장">시리즈 I의 핵심 9개 장</a></li>
+<li><a href="#시그니처-자산-문제-발견의-기술"
+id="toc-시그니처-자산-문제-발견의-기술">시그니처 자산 — <em>문제 발견의
+기술</em></a></li>
+<li><a href="#균형-자료" id="toc-균형-자료">균형 자료</a></li>
+<li><a href="#부의-한-줄-회수" id="toc-부의-한-줄-회수">1부의 한 줄
+회수</a></li>
+</ul></li>
+<li><a href="#부.-코드-너머의-직업들-사람의-외형"
+id="toc-부.-코드-너머의-직업들-사람의-외형">2부. 코드 너머의 직업들 —
+사람의 외형</a>
+<ul>
+<li><a href="#던진-질문-1" id="toc-던진-질문-1">던진 질문</a></li>
+<li><a href="#결정적-데이터-1" id="toc-결정적-데이터-1">결정적
+데이터</a></li>
+<li><a href="#개-본론-직업" id="toc-개-본론-직업">5개 본론 직업</a></li>
+<li><a href="#시그니처-자산-통일된-다섯-칸-포맷"
+id="toc-시그니처-자산-통일된-다섯-칸-포맷">시그니처 자산 — <em>통일된
+다섯 칸 포맷</em></a></li>
+<li><a href="#부록-12개-직군" id="toc-부록-12개-직군">부록 12개
+직군</a></li>
+<li><a href="#한국-시장-매핑" id="toc-한국-시장-매핑">한국 시장
+매핑</a></li>
+<li><a href="#부의-한-줄-회수-1" id="toc-부의-한-줄-회수-1">2부의 한 줄
+회수</a></li>
+</ul></li>
+<li><a href="#부.-코드-너머의-조직-사람의-환경"
+id="toc-부.-코드-너머의-조직-사람의-환경">3부. 코드 너머의 조직 — 사람의
+환경</a>
+<ul>
+<li><a href="#던진-질문-2" id="toc-던진-질문-2">던진 질문</a></li>
+<li><a href="#결정적-데이터-2" id="toc-결정적-데이터-2">결정적
+데이터</a></li>
+<li><a href="#개-장-막간" id="toc-개-장-막간">11개 장 + 막간</a></li>
+<li><a href="#시그니처-자산-세-가지"
+id="toc-시그니처-자산-세-가지">시그니처 자산 세 가지</a></li>
+<li><a href="#균형-자료-1" id="toc-균형-자료-1">균형 자료</a></li>
+<li><a href="#한국-시장-매핑-1" id="toc-한국-시장-매핑-1">한국 시장
+매핑</a></li>
+<li><a href="#부의-한-줄-회수-2" id="toc-부의-한-줄-회수-2">3부의 한 줄
+회수</a></li>
+</ul></li>
+<li><a href="#부.-세-권을-한-줄로" id="toc-부.-세-권을-한-줄로">4부. 세
+권을 한 줄로</a>
+<ul>
+<li><a href="#시리즈-종합-표" id="toc-시리즈-종합-표">시리즈 종합
+표</a></li>
+<li><a href="#시리즈가-일관되게-거부한-것"
+id="toc-시리즈가-일관되게-거부한-것">시리즈가 일관되게 거부한
+것</a></li>
+<li><a href="#세-권이-같이-흐르는-시간-곡선"
+id="toc-세-권이-같이-흐르는-시간-곡선">세 권이 같이 흐르는 시간
+곡선</a></li>
+<li><a href="#시리즈가-남긴-한-줄" id="toc-시리즈가-남긴-한-줄">시리즈가
+남긴 한 줄</a></li>
+<li><a href="#다음-부-안내" id="toc-다음-부-안내">다음 부 안내</a></li>
+</ul></li>
+<li><a href="#부록.-시리즈-핵심-인용-모음"
+id="toc-부록.-시리즈-핵심-인용-모음">부록. 시리즈 핵심 인용 모음</a>
+<ul>
+<li><a href="#시리즈-i-시대" id="toc-시리즈-i-시대">시리즈 I —
+시대</a></li>
+<li><a href="#시리즈-ii-직업들" id="toc-시리즈-ii-직업들">시리즈 II —
+직업들</a></li>
+<li><a href="#시리즈-iii-조직" id="toc-시리즈-iii-조직">시리즈 III —
+조직</a></li>
+<li><a href="#시리즈-전체의-균형-자료"
+id="toc-시리즈-전체의-균형-자료">시리즈 전체의 균형 자료</a></li>
+<li><a href="#원작-세-권-어디서-읽나"
+id="toc-원작-세-권-어디서-읽나">원작 세 권 — 어디서 읽나</a></li>
+</ul></li>
+<li><a href="#에필로그.-다음으로" id="toc-에필로그.-다음으로">에필로그.
+다음으로</a>
+<ul>
+<li><a href="#어느-권부터-읽으면-좋은가"
+id="toc-어느-권부터-읽으면-좋은가">어느 권부터 읽으면 좋은가</a></li>
+<li><a href="#시리즈가-끝나지-않은-자리"
+id="toc-시리즈가-끝나지-않은-자리">시리즈가 끝나지 않은 자리</a></li>
+<li><a href="#감사의-말" id="toc-감사의-말">감사의 말</a></li>
+<li><a href="#마지막-한-문장" id="toc-마지막-한-문장">마지막 한
+문장</a></li>
+</ul></li>
+</ul>
+</nav>
+<main>
+<h1 id="코드-너머의-시리즈">코드 너머의 시리즈</h1>
+<h2 id="세-권의-결을-한-권에">세 권의 결을 한 권에</h2>
+<p><strong>저자:</strong> 김상기 <strong>시리즈 요약본</strong>
+<strong>원작:</strong> - I. 코드 너머의 시대 — AI가 모든 것을 바꾼
+세상에서 살아남는 법 - II. 코드 너머의 직업들 — GPU 위에서 일하는 사람들
+- III. 코드 너머의 조직 — AX 시대, 일과 조직을 다시 짜는 법</p>
+<p><strong>버전:</strong> 1.0.0 <strong>발행일:</strong> 2026-05-17</p>
+<hr />
+<h2 id="목차">목차</h2>
+<ul>
+<li>책을 펴내며</li>
+<li>프롤로그. 시리즈가 그린 한 풍경</li>
+<li>1부. 코드 너머의 시대 — 사람의 내면</li>
+<li>2부. 코드 너머의 직업들 — 사람의 외형</li>
+<li>3부. 코드 너머의 조직 — 사람의 환경</li>
+<li>4부. 세 권을 한 줄로</li>
+<li>부록. 시리즈 핵심 인용 모음</li>
+<li>에필로그. 다음으로</li>
+</ul>
+<hr />
+<h1 id="책을-펴내며">책을 펴내며</h1>
+<p>이 책은 <em>코드 너머의</em> 시리즈 세 권의
+<em>요약본</em>입니다.</p>
+<p>세 권을 합치면 약 700페이지에 가깝습니다. 한빛 실용서 두께 두 권
+분량. 모두 읽기에는 시간이 필요한 분량입니다. 그래서 <em>세 권의 결을 한
+권에 압축한 작은 책</em>을 따로 만들었습니다.</p>
+<h2 id="이-요약본이-다루는-것">이 요약본이 다루는 것</h2>
+<p>세 권의 <em>핵심 메시지·시그니처 자산·결정적 데이터</em>만 골라 한
+권에 담았습니다. 약 70쪽 분량. 세 권을 다 읽지 않아도 시리즈가 던지는
+<em>한 풍경</em>을 한 번에 통과할 수 있게 짰습니다.</p>
+<p>각 부의 구조는 동일합니다.</p>
+<ul>
+<li><em>그 권이 던진 핵심 질문</em></li>
+<li><em>결정적 데이터 한 줄</em></li>
+<li><em>시그니처 자산</em>(시리즈 III의 EPOCH 매핑·Cornell 카드·ITM 짝
+비교 등)</li>
+<li><em>한 줄 회수</em></li>
+</ul>
+<p>읽기 시간은 <em>1시간에서 1시간 30분 정도</em>. 시리즈를 <em>처음
+만나는 독자</em>에게는 <em>어느 권을 먼저 읽을지</em>의 안내가 되고,
+<em>이미 읽은 독자</em>에게는 <em>한 번 더 회수</em>가 됩니다.</p>
+<h2 id="누가-읽으면-좋은가">누가 읽으면 좋은가</h2>
+<ul>
+<li><em>시리즈 세 권을 한 번에 훑고 싶은 독자</em></li>
+<li><em>시리즈 미독자가 들어가는 입구</em>가 필요한 분</li>
+<li><em>시리즈 독자가 한 번 더 회수</em>하고 싶은 분</li>
+<li><em>동료에게 시리즈를 추천</em>하면서 <em>어떤 권부터 권할지</em>
+정해야 하는 분</li>
+</ul>
+<h2 id="어떻게-읽으면-좋은가">어떻게 읽으면 좋은가</h2>
+<p>순서대로 읽는 것을 추천합니다. 1부에서 4부까지가 <em>시리즈의 시간
+순서</em>입니다. <em>내면 → 외형 → 환경</em>의 세 층을 차례로
+통과합니다.</p>
+<p>이 요약본 자체가 <em>원작 세 권의 대체</em>는 아닙니다. <em>입구이자
+출구</em>에 가깝습니다. 어느 부의 한 줄이 <em>더 자세히 읽고 싶다</em>는
+마음을 일으키면, 그 권을 직접 펼치는 것이 자연스러운 다음
+단계입니다.</p>
+<p>원작 세 권의 EPUB과 GitHub Pages 링크는 부록 마지막에 정리해
+두었습니다.</p>
+<p>읽어주셔서 감사합니다.</p>
+<p><em>— 김상기, 2026년 5월</em></p>
+<h1 id="프롤로그.-시리즈가-그린-한-풍경">프롤로그. 시리즈가 그린 한
+풍경</h1>
+<p>세 권의 시리즈가 그린 한 풍경이 있습니다.</p>
+<p><em>사람의 자리는 새로 만들어진다.</em></p>
+<p>이 한 줄이 <em>코드 너머의</em> 시리즈 세 권을 묶는 핵심입니다.
+시리즈 I이 사람의 <em>내면</em>에서, II가 사람의 <em>외형</em>에서,
+III가 사람의 <em>환경</em>에서 같은 한 줄을 풀었습니다.</p>
+<hr />
+<h2 id="시간-좌표">시간 좌표</h2>
+<p>세 권은 2026년 봄에서 가을 사이에 차례로 출간되었습니다.</p>
+<ul>
+<li><em>코드 너머의 시대</em> (시리즈 I) — 2026년. AI가 모든 것을 바꾼
+세상에서 <em>어떤 사람으로 살아남을까</em>.</li>
+<li><em>코드 너머의 직업들</em> (시리즈 II) — 2026년 5월.
+PC·인터넷·모바일이 그랬듯 <em>AI 인프라 다음에 자라는 새 직업의
+도감</em>.</li>
+<li><em>코드 너머의 조직</em> (시리즈 III) — 2026년 5월. <em>빅4의
+결론을 한국 시장 매뉴얼로 옮긴 자리</em>.</li>
+</ul>
+<p>같은 해에 세 권이 차례로 출간된 데는 이유가 있습니다.
+<em>2025~2026년이 AX 시대의 분기점</em>이라는 진단.
+McKinsey·BCG·Microsoft·Deloitte가 같은 분기에 같은 결론을 던졌고, 한국
+정부가 AX 예산을 84% 증액했고, 삼성SDS·LG CNS·SK가 같은 분기에 AX 인사를
+단행한 풍경. <em>기록할 시점</em>이라는 판단이 시리즈를 세 권 연속으로
+만든 동력이었습니다.</p>
+<hr />
+<h2 id="시리즈가-묶는-세-차원">시리즈가 묶는 세 차원</h2>
+<p>세 권을 한 표에 정리하면 시리즈 전체의 좌표가 보입니다.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>시리즈 I</th>
+<th>시리즈 II</th>
+<th>시리즈 III</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다루는 층</td>
+<td>사람의 <strong>내면</strong></td>
+<td>사람의 <strong>외형</strong></td>
+<td>사람의 <strong>환경</strong></td>
+</tr>
+<tr>
+<td>단위</td>
+<td>역량·태도</td>
+<td>직업·자리</td>
+<td>조직·운영 모델</td>
+</tr>
+<tr>
+<td>질문</td>
+<td>어떤 사람으로 살아남을까</td>
+<td>어떤 자리에서 살아남을까</td>
+<td>어떤 조직으로 살아남을까</td>
+</tr>
+<tr>
+<td>1순위 독자</td>
+<td>개발자·비개발자</td>
+<td>현직 개발자·PM</td>
+<td>HR 리더·기술 리더</td>
+</tr>
+</tbody>
+</table>
+<p>세 차원이 <em>서로를 키우는</em> 풍경. 한 사람의 역량이 자라면 그
+사람이 새 자리를 만들고, 그 자리가 만들어지면 조직이 새 모양을 갖추고,
+그 조직이 다시 한 사람을 자라게 합니다.</p>
+<hr />
+<h2 id="이-요약본이-다루는-순서">이 요약본이 다루는 순서</h2>
+<p>1부에서 시리즈 I을 8쪽으로 압축합니다. 2부에서 시리즈 II를. 3부에서
+시리즈 III를. 4부에서 <em>세 권을 한 줄로</em> 종합합니다. 부록에
+<em>시리즈 전체 핵심 인용</em>을 모았습니다.</p>
+<p>순서대로 읽으시면 <em>시간 순</em>이자 <em>내면 → 외형 → 환경</em>의
+자연스러운 흐름입니다.</p>
+<p>자, 1부 <em>코드 너머의 시대</em>부터 시작합니다.</p>
+<h1 id="부.-코드-너머의-시대-사람의-내면">1부. 코드 너머의 시대 — 사람의
+내면</h1>
+<blockquote>
+<p><em>“AI가 당신을 대체하지 않습니다. AI를 사용하는 사람이
+대체합니다.”</em> — 시리즈 I의 핵심 메시지</p>
+</blockquote>
+<p>시리즈 첫 권 <em>코드 너머의 시대</em>는 <em>AI가 모든 것을 바꾼
+세상에서 어떤 사람으로 살아남을까</em>를 다뤘습니다.</p>
+<p>이 권은 <em>사람의 내면</em> — 역량·태도·학습 방식 — 의 차원에서 AI
+시대를 풀었습니다.</p>
+<h2 id="던진-질문">던진 질문</h2>
+<p>AI가 코드를 쓰는 시대에 <em>개발자와 비개발자 모두</em>에게 무엇이
+남는가. 무엇이 사라지고, 무엇이 남는가. 그 빈자리에 들어와야 하는 <em>새
+역량</em>은 무엇인가.</p>
+<h2 id="결정적-데이터">결정적 데이터</h2>
+<ul>
+<li>Anthropic 2026 보고서: 개발자의 <em>60%가 AI를 사용</em>. 그러나
+<em>AI에 “완전 위임” 가능한 작업은 0~20%</em>. 사용은 흔하지만 위임은
+어려운 풍경.</li>
+<li>Vercel 2025 <em>State of Vibe Coding</em>: 자사 AI 개발 도구 v0
+사용자의 <em>63%가 비개발자</em>. 코드를 짠 적 없는 사람들이 사용자의
+과반.</li>
+<li>Rakuten 사례: Claude Code가 <em>1,250만 줄 코드베이스에서 7시간 자율
+작업</em>으로 엔지니어링 태스크를 완수. 정확도 99.9%.</li>
+<li>노코드/로코드 시장: 132억 → 455억 달러로 확장 예상. 신규 앱의
+<em>75%가 로코드 플랫폼</em>에서 만들어집니다.</li>
+</ul>
+<h2 id="시리즈-i의-핵심-9개-장">시리즈 I의 핵심 9개 장</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>장</th>
+<th>한 줄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. AI가 코드를 쓰는 시대</td>
+<td>바이브 코딩과 에이전틱 AI가 일상이 됨</td>
+</tr>
+<tr>
+<td>2. 당신의 자리는 안전한가</td>
+<td>일자리의 <em>수</em>가 아니라 <em>성격</em>이 바뀜. 65%의 개발자가
+역할 재정의 예상</td>
+</tr>
+<tr>
+<td>3. AI가 가져간 것들</td>
+<td>보일러플레이트 62%·단순 버그 58%·테스트 작성 57% 자동화</td>
+</tr>
+<tr>
+<td>4. AI가 가져갈 수 없는 것들</td>
+<td>창의성·비판적 사고·공감·윤리. <em>5C
+프레임</em>(호기심·비판·창의·소통·인격)</td>
+</tr>
+<tr>
+<td>5. 모두가 개발자가 되는 세상</td>
+<td><em>시민 개발자</em>의 탄생. 앱의 80%가 비개발자에 의해 만들어지는
+시대</td>
+</tr>
+<tr>
+<td>6. 무엇을 만들 것인가</td>
+<td><em>문제 발견의 기술</em>. 만들 수 있느냐에서 <em>무엇을 만들
+것인가</em>로</td>
+</tr>
+<tr>
+<td>7. AI와 함께 일하는 법</td>
+<td><em>오케스트레이션의 기술</em>. 경쟁이 아니라 <em>지휘</em></td>
+</tr>
+<tr>
+<td>8. 오래 가는 사람의 학습법</td>
+<td>T자형 → <em>파이(π)자형</em>. 깊이 있는 전문성 2개 + 폭넓은 연결
+능력</td>
+</tr>
+<tr>
+<td>9. 코드 너머에서 만나는 것들</td>
+<td><em>함께 일하고 싶은 사람</em>이라는 변하지 않는 기준</td>
+</tr>
+</tbody>
+</table>
+<h2 id="시그니처-자산-문제-발견의-기술">시그니처 자산 — <em>문제 발견의
+기술</em></h2>
+<p>시리즈 I의 가장 결정적 자산이 <em>문제 해결자에서 문제 발견자로의
+진화</em>라는 메시지입니다. AI가 <em>어떻게 만들 것인가</em>를 해결하는
+시대, 진짜 경쟁력은 <em>무엇을 만들 것인가</em>에 있다는 사실. 이 진단이
+시리즈 II로 자연스럽게 이어집니다.</p>
+<p>또 한 가지 자산은 <em>Microsoft 5C 프레임</em>입니다.
+Curiosity·Critical Thinking·Creativity·Communication·Character. AI
+시대에 인간 고유 역량이 <em>측정 가능한 다섯 가지 축</em>으로 정리된
+자리. 시리즈 III의 EPOCH 5요소와 짝지어 있습니다.</p>
+<h2 id="균형-자료">균형 자료</h2>
+<p>시리즈 I이 자랑한 한 가지 정직함이 <em>주니어의 위기를 과장 없이
+다룬</em> 자리였습니다. 22~25세 개발자 고용 <em>20% 감소</em>, 상위 15개
+테크 기업 신입 채용 <em>25% 감소</em>(Stanford). 동시에 <em>미국
+노동통계국의 2033년까지 17% 성장 전망</em>. 두 데이터를 <em>나란히</em>
+박았습니다. <em>위기는 있지만 과장된 부분도 있다</em>는 균형.</p>
+<h2 id="부의-한-줄-회수">1부의 한 줄 회수</h2>
+<p><em>코드 너머의 시대</em>는 <em>내면</em>의 책입니다. <em>AI 시대에
+어떤 사람으로 살아남을까</em>에 대한 답이 <em>역량·태도·학습 방식</em>의
+세 축에서 정리되었습니다.</p>
+<blockquote>
+<p><em>기술이 아무리 바뀌어도, 결국 남는 것은 사람이다.</em></p>
+</blockquote>
+<p>이 한 줄이 시리즈 I의 마지막 회수입니다. 그리고 시리즈 II의 <em>직업
+도감</em>으로 자연스럽게 이어집니다. <em>남는 사람</em>이 <em>어떤
+자리</em>에 가는지를, 그 다음 권에서 본격적으로 다룹니다.</p>
+<h1 id="부.-코드-너머의-직업들-사람의-외형">2부. 코드 너머의 직업들 —
+사람의 외형</h1>
+<blockquote>
+<p><em>“5년 걸리던 AI 작업이 API 문서와 한가한 오후 한 번이면
+가능해졌습니다.”</em> — Shawn Wang (Swyx), <em>The Rise of the AI
+Engineer</em> (2023)</p>
+</blockquote>
+<p>시리즈 두 번째 권 <em>코드 너머의 직업들</em>은 <em>AI 인프라 다음에
+자라는 5개 새 직업의 도감</em>입니다.</p>
+<p>이 권은 <em>사람의 외형</em> — 직업·자리·전환 경로 — 의 차원에서 AI
+시대를 풀었습니다.</p>
+<h2 id="던진-질문-1">던진 질문</h2>
+<p>PC·인터넷·모바일이 그랬듯, AI 인프라 다음에 <em>어떤 새 직업</em>이
+자라는가. <em>현직 개발자와 PM</em>이 그 자리로 옮겨갈 때 <em>어떤
+경로</em>가 가장 짧은가.</p>
+<h2 id="결정적-데이터-1">결정적 데이터</h2>
+<ul>
+<li>시차 데이터: PC 시대 <em>12~14년</em>, 인터넷 시대 <em>9~11년</em>,
+모바일 시대 <em>5~6년</em>. AI 시대는 <em>3~5년</em>이 될 가능성.</li>
+<li>Nvidia 시가총액: 2026년 5월 약 <em>5조 2,300억 달러</em>. 데이터센터
+칩 매출 점유율 <em>81%</em> (IDC).</li>
+<li>SaaS 멀티플 압축: Cloud 100 사모 평균 EV/Revenue가 2023년 26배에서
+2025년 <em>20배</em>까지. 3년 연속 하락.</li>
+<li>채용 데이터: LinkedIn AI Engineer 채용 <em>+143.2%</em> (3년),
+Forward Deployed Engineer <em>+1,165%</em> YoY (Bloomberry 1,000건
+분석).</li>
+</ul>
+<h2 id="개-본론-직업">5개 본론 직업</h2>
+<p>이 책의 무게중심이 <em>PART 3 본론 5개 직업</em>입니다. 같은 다섯 칸
+통일 포맷으로 비교 가능하게 짰습니다.</p>
+<h3 id="장.-ai-product-manager-모델을-제품으로-만드는-사람">7장. AI
+Product Manager — 모델을 제품으로 만드는 사람</h3>
+<p><em>Evals replace traditional PRDs.</em> PRD 대신 <em>eval
+데이터셋</em>이 사양서가 되는 자리. 사이클은 <em>분기 로드맵</em>에서
+<em>연속 실험</em>으로. 한국에서는 <em>AI PM</em>이라는 정확한 타이틀이
+드물지만, 토스·당근·카카오·뤼튼·업스테이지의 PM 직무에 통합되고
+있습니다.</p>
+<h3
+id="장.-forward-deployed-engineer-고객-현장에서-모델을-다듬는-사람">8장.
+Forward Deployed Engineer — 고객 현장에서 모델을 다듬는 사람</h3>
+<p>Bloomberry 1,000건 분석에서 <em>고객과 직접 협업 55% / AI 시스템 빌드
+37% / 매출 책임 0%</em>. 영업이 아닌 <em>코드를 쓰는 자리</em>. Palantir
+원조의 직군이 OpenAI·Anthropic으로 퍼졌습니다. 한국에서는 LG CNS
+1,000명·삼성SDS·업스테이지에서 <em>AI 컨설턴트와 솔루션 아키텍트의
+결합</em> 형태로 자라고 있습니다.</p>
+<h3
+id="장.-applied-ai-engineer-백엔드풀스택-개발자의-자연스러운-다음-자리">9장.
+Applied AI Engineer — 백엔드·풀스택 개발자의 자연스러운 다음 자리</h3>
+<blockquote>
+<p><em>“Data Scientists answer questions. ML Engineers build systems. AI
+Engineers ship products.”</em> — Drew Breunig</p>
+</blockquote>
+<p>LinkedIn AI Engineer 채용 <em>+143.2%</em>. 한국에서 <em>가장 활발한
+자리</em>. 카카오·네이버·토스·당근·LG AI Research·업스테이지·뤼튼이 모두
+채용 중. 키워드는 <em>RAG + LangChain + LLMOps + 평가</em>.</p>
+<h3 id="장.-agent-운영자-agentops-이-책의-시그니처-직군">10장. Agent
+운영자 / AgentOps — 이 책의 시그니처 직군</h3>
+<p>가장 새롭고 가장 빨리 자라는 자리. arXiv:2411.05285 <em>“AgentOps:
+Enabling Observability of LLM Agents”</em>가 학술 등장. IBM·a16z·Latent
+Space가 일상적으로 사용. AgentOps 도구
+회사들(LangSmith·Langfuse·Helicone·Arize) 활발. UC Berkeley Cemri 외
+2025: 다중 에이전트 시스템의 <em>41~86.7% 실패율</em>이 이 자리의 존재
+이유.</p>
+<h3
+id="장.-eval-engineer-ai-reliability-품질을-측정하고-책임지는-사람">11장.
+Eval Engineer · AI Reliability — 품질을 측정하고 책임지는 사람</h3>
+<p>Hamel Husain·Shankar: <em>“60-80%의 개발 시간을 error analysis에
+쓴다.”</em> 결정적 학술: Zheng 외 2023 <em>LLM-as-Judge</em>(GPT-4 judge
+↔︎ 인간 80%+ 일치), Deng 외 2024 <em>Data Contamination</em>(GPT-4 MMLU
+메모리화 57%). 한국에 <em>가장 늦게 도착하는</em> 자리.</p>
+<h2 id="시그니처-자산-통일된-다섯-칸-포맷">시그니처 자산 — <em>통일된
+다섯 칸 포맷</em></h2>
+<p>5개 직업이 <em>같은 다섯 칸</em>으로 비교됩니다: ① 하루의 풍경 / ②
+무엇이 다른가 / ③ 어떤 사람이 잘 맞나 / ④ 한국 채용 신호 / ⑤ 90일 안에
+시도할 한 가지. 5개 챕터의 <em>같은 칸끼리</em> 비교하면 <em>직업
+도감</em>이 만들어집니다.</p>
+<p>또 한 가지 자산은 <em>전환 경로 매핑 표</em>. 백엔드 → Applied AI
+Engineer, SI 컨설턴트 → FDE, QA → Eval Engineer, SRE → Agent 운영자, PM
+→ AI PM. 현직별 <em>가장 가까운 점프</em>가 표 한 장에 정리되어
+있습니다.</p>
+<h2 id="부록-12개-직군">부록 12개 직군</h2>
+<p>본론 5개 외에 <em>12개의 인접 직군</em>이 부록 A에 카탈로그로
+정리되어 있습니다. 두 묶음으로 나뉩니다.</p>
+<ul>
+<li><em>기술·제품 인접 7개</em>: Solutions Architect (AI) / AI
+Researcher-in-Residence / AI Sales Engineer / AI Customer Engineer /
+Prompt Architect / AI Reliability Engineer / AI Compliance·Ethics
+Engineer</li>
+<li><em>조직·운영 인접 5개</em>: Hybrid Manager / AI Coach / AI Literacy
+프로그램 운영자 / AX Communications / Skill Ontology Manager</li>
+</ul>
+<p>본론 5개 + 부록 12개 = <em>17개의 자리</em>. AI 시대 새 직업의
+카탈로그가 한 권에 정리되었습니다.</p>
+<h2 id="한국-시장-매핑">한국 시장 매핑</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>직군</th>
+<th>한국 도착 단계</th>
+<th>가장 가까운 회사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Applied AI Engineer</td>
+<td>성숙 ★★★★★</td>
+<td>카카오·네이버·토스·당근·업스테이지·뤼튼</td>
+</tr>
+<tr>
+<td>FDE</td>
+<td>재편 중 ★★★★</td>
+<td>LG CNS·삼성SDS·업스테이지</td>
+</tr>
+<tr>
+<td>AI PM</td>
+<td>도구화 단계 ★★★</td>
+<td>토스·당근·카카오·뤼튼</td>
+</tr>
+<tr>
+<td>Agent 운영자</td>
+<td>운영팀 형태 ★★</td>
+<td>SK 에이닷 운영팀</td>
+</tr>
+<tr>
+<td>Eval Engineer</td>
+<td>가장 늦음 ★</td>
+<td>업스테이지(LLM Evaluation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="부의-한-줄-회수-1">2부의 한 줄 회수</h2>
+<p><em>코드 너머의 직업들</em>은 <em>외형</em>의 책입니다. <em>AI 인프라
+다음에 자라는 새 직업의 도감</em>이자 <em>현직자의 전환 지도</em>.</p>
+<blockquote>
+<p><em>어떤 자리에서 살아남을까.</em></p>
+</blockquote>
+<p>이 한 줄이 시리즈 II의 마지막 회수입니다. 시리즈 I이 <em>어떤
+사람으로 살아남을까</em>였다면, 시리즈 II가 <em>어떤 자리에서
+살아남을까</em>. 그리고 시리즈 III가 그 자리들이 모여 만든
+<em>조직</em>을 다룹니다.</p>
+<h1 id="부.-코드-너머의-조직-사람의-환경">3부. 코드 너머의 조직 — 사람의
+환경</h1>
+<blockquote>
+<p><em>“AX는 기술 도입이 아니라 일과 조직의 재설계다.”</em> —
+빅4(McKinsey·BCG·Microsoft·Deloitte)의 일치된 결론</p>
+</blockquote>
+<p>시리즈 세 번째 권 <em>코드 너머의 조직</em>은 <em>AX 시대 일과 조직을
+다시 짜는 법</em>을 다뤘습니다.</p>
+<p>이 권은 <em>사람의 환경</em> — 조직·운영 모델·평가·보상·인재 시장 —
+의 차원에서 AI 시대를 풀었습니다.</p>
+<h2 id="던진-질문-2">던진 질문</h2>
+<p>AX는 무엇이 다르고, <em>왜 95%의 기업이 가치 창출에 실패</em>하는가.
+그리고 5%의 future-built 기업은 <em>무엇을 다르게</em> 하는가. 그 답을
+<em>한국 시장 매뉴얼</em>로 옮기면 어떤 모양이 되는가.</p>
+<h2 id="결정적-데이터-2">결정적 데이터</h2>
+<ul>
+<li>McKinsey <em>State of AI 2025</em>: <em>88%의 기업이 AI를 도입했지만
+EBIT 효과를 본 곳은 39%</em>. 가장 큰 단일 변수는 <em>workflow
+redesign</em>. <em>21%만이 워크플로우 근본 재설계</em>. 고성과 기업의
+<em>AI ROI가 평균의 2.8배</em>.</li>
+<li>BCG: <em>60%의 기업이 가치 창출 실패. 5%만이 future-built</em>.
+<em>10-20-70 framework</em>(알고리즘 10·기술 20·<em>사람과 프로세스
+70</em>). trailblazer CEO 15%는 <em>예산의 75%를 업스킬링에</em>. 결과는
+<em>ROI 2.1배</em>.</li>
+<li>Microsoft <em>Frontier Firm</em>: <em>직원 80%가 시간빚, 리더 82%가
+capacity 부족</em>. <em>67% vs 40% 에이전트 친숙도 격차</em>.</li>
+<li>Deloitte: <em>93%의 리더가 직무 구조 변화 필요 인식, 19%만 실행 /
+73%가 매니저 재정의 필요, 7%만 진행</em>.</li>
+<li>한국 정부 2026 AX 예산: <em>4,552억 원</em> (전년 대비
+<em>+83.6%</em>).</li>
+</ul>
+<h2 id="개-장-막간">11개 장 + 막간</h2>
+<h3 id="part-1-ax란-무엇인가">PART 1 — AX란 무엇인가</h3>
+<ul>
+<li>1장. AX는 DX가 아니다 — <em>결과 중심의 재설계</em>. Tobi Lütke
+메모: <em>AI로 못 하는 일임을 증명하기 전엔 헤드카운트 말
+마라.</em></li>
+<li>2장. 95%는 왜 가치를 만들지 못하는가 — 5%의 행동 양식 5가지. Hackman
+자율팀 5조건이 50년 학술 백본.</li>
+<li>3장. 한국이 보내는 신호 — 삼성SDS·LG CNS·SK 동시 AX 인사·롯데
+직무기반·SKT 양대 CIC.</li>
+</ul>
+<h3 id="part-2-일의-재정의">PART 2 — 일의 재정의</h3>
+<ul>
+<li>4장. 직무에서 task로 — <em>직무 단위</em>가 아닌 <em>task
+단위</em>가 새 표준. Acemoglu·Restrepo의 <em>task content
+framework</em>.</li>
+<li>5장. 인간·AI 협업의 두 모드 — <em>EPOCH 프레임</em> + <em>Centaur vs
+Cyborg</em> + <em>Vaccaro 반박</em>(synergy 평균 부재).</li>
+<li>6장. Agentic Organization과 매니저 재정의 — <em>Work Chart·3~5인
+pod·신입 사다리 부러짐</em>.</li>
+</ul>
+<h3 id="part-3-ax-실행-세-시도-본론">PART 3 — AX 실행 세 시도
+(본론)</h3>
+<ul>
+<li>7장. <strong>새로운 성과 관리</strong> — <em>EPOCH 한국형 매핑
+표</em> (시그니처).</li>
+<li>8장. <strong>새로운 기여자 보상</strong> — <em>Cornell 2025 인과
+카드</em>(성과 보상 → AI 채택) + 액수의 짝 네
+가지(액수·미션·유동성·재량).</li>
+<li>9장. <strong>Skill Marketplace</strong> ⭐ — Schneider·Unilever·IBM
+교과서 + <em>삼성 잡포스팅 vs 롯데 직무기반 짝 비교</em>.</li>
+</ul>
+<h3 id="막간-우리가-틀릴-수-있는-9가지">막간 — 우리가 틀릴 수 있는
+9가지</h3>
+<p>본서 가설을 <em>반박하는 학술·산업 자료 9개</em>를 정직하게 직시.
+Vaccaro synergy 부재 / Fuller·Raman 3.6% 실행 / Vallas·Schor permissive
+potentate / Anthropic Index 신입 -14% 등.</p>
+<h3 id="part-4-한국에서">PART 4 — 한국에서</h3>
+<ul>
+<li>10장. 한국 AX 풍경 — 현대해상 콜센터 7명 전원 퇴사·카카오톡 UI
+개편·SI 빅3 동상이몽·SK Devocean 5단계 모델·SKT 양대 CIC.</li>
+</ul>
+<h2 id="시그니처-자산-세-가지">시그니처 자산 세 가지</h2>
+<p>시리즈 III가 <em>학술과 산업의 빈 공간</em>에 직접 기여한 자리.</p>
+<ol type="1">
+<li><p><strong>EPOCH 한국형 매핑</strong> (7장) — MIT Sloan의 EPOCH
+5요소(Empathy·Presence·Opinion·Creativity·Hope)를 <em>한국 직무 유형
+3</em>(지식 근로자·고객 응대·관리자)에 매핑한 <em>15칸 표</em>. 학술 70%
++ 책의 기여 30%.</p></li>
+<li><p><strong>Cornell 2025 인과 카드</strong> (8장) — <em>성과 기반
+보상이 AI 활용도를 유의미하게 늘린다</em>는 학술 발견. 1980~90년대
+<em>algorithm aversion</em> 결론을 정반대로 뒤집은 자리. <em>한국 재현
+미검증</em>은 정직하게 본문에 명시.</p></li>
+<li><p><strong>Schneider·Unilever ↔︎ 삼성·롯데 짝 비교</strong> (9장) —
+Schneider Open Talent Market(550k시간·$15M·89%·12,000 멘토)과 Unilever
+FLEX(700k시간·90,000명·95%·41% 생산성), 그리고 한국에 가장 가까운
+<em>삼성 잡포스팅</em>과 <em>롯데 직무기반 인사제도</em>의 짝 비교
+표.</p></li>
+</ol>
+<h2 id="균형-자료-1">균형 자료</h2>
+<p>시리즈 III의 가장 정직한 자리가 <em>막간 9가지</em>입니다.
+<em>Synergy 평균 부재 / Skills-based hiring 3.6% 실행 / ITM의 permissive
+potentate / 신입 진입 -14% / 자율팀 5조건 / 거시 효과 미미 / 양극화 /
+보상의 선별 효과 / Cornell 한국 미검증</em>. 본서의 가설을
+<em>조건부</em>로 굴절시키는 학술·산업 자료들.</p>
+<h2 id="한국-시장-매핑-1">한국 시장 매핑</h2>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>진행</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발표</td>
+<td><em>풍부</em> (정부 예산 +84%·SI 빅3 동시 인사·대기업 AX 조직
+신설)</td>
+</tr>
+<tr>
+<td>실행</td>
+<td><em>글로벌 19%보다 낮을 가능성</em></td>
+</tr>
+<tr>
+<td>5% future-built 후보</td>
+<td>롯데(직무기반)·SKT(양대 CIC). 1~2년 뒤 검증</td>
+</tr>
+<tr>
+<td>변화 관리 실패</td>
+<td>현대해상 콜센터 7명 전원 퇴사</td>
+</tr>
+<tr>
+<td>매니저 재정의 한국 표준</td>
+<td>SK Devocean <em>5단계 내재화 모델</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="부의-한-줄-회수-2">3부의 한 줄 회수</h2>
+<p><em>코드 너머의 조직</em>은 <em>환경</em>의 책입니다. <em>AX 시대의
+일과 조직 재설계</em>가 한국 시장 매뉴얼로 옮겨진 자리.</p>
+<blockquote>
+<p><em>어떤 조직으로 살아남을까.</em></p>
+</blockquote>
+<p>이 한 줄이 시리즈 III의 마지막 회수입니다. 시리즈 I·II의 <em>내면과
+외형</em>이 사람의 차원이었다면, 시리즈 III의 <em>환경</em>이 조직의
+차원. 세 차원이 <em>서로를 키우는</em> 풍경.</p>
+<h1 id="부.-세-권을-한-줄로">4부. 세 권을 한 줄로</h1>
+<p>세 권을 한 줄로 묶으면 다음과 같습니다.</p>
+<blockquote>
+<p><strong>AI 시대에 <em>사람의 자리</em>는 <em>내면·외형·환경</em> 세
+차원에서 동시에 새로 만들어진다.</strong></p>
+</blockquote>
+<p>세 권의 각 결론이 <em>서로 받쳐주는</em> 풍경.</p>
+<hr />
+<h2 id="시리즈-종합-표">시리즈 종합 표</h2>
+<p>세 권의 한 줄 회수를 한 표로:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>권</th>
+<th>다룬 차원</th>
+<th>던진 질문</th>
+<th>한 줄 답</th>
+<th>시그니처 자산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I. 시대</td>
+<td>내면</td>
+<td>어떤 사람으로 살아남을까</td>
+<td><em>코드 너머의 역량·태도</em></td>
+<td>문제 발견의 기술 · 5C 프레임</td>
+</tr>
+<tr>
+<td>II. 직업들</td>
+<td>외형</td>
+<td>어떤 자리에서 살아남을까</td>
+<td><em>코드 너머의 새 직업</em></td>
+<td>5개 본론 직업 도감 + 17개 자리 카탈로그</td>
+</tr>
+<tr>
+<td>III. 조직</td>
+<td>환경</td>
+<td>어떤 조직으로 살아남을까</td>
+<td><em>코드 너머의 일과 조직 재설계</em></td>
+<td>EPOCH 한국형 매핑 · Cornell 인과 카드 · ITM 짝 비교</td>
+</tr>
+</tbody>
+</table>
+<p>세 권의 <em>시그니처 자산</em>이 차원별로 짝지어 있습니다.</p>
+<ul>
+<li>I의 <em>5C 프레임</em>(Curiosity·Critical
+Thinking·Creativity·Communication·Character) ↔︎ III의 <em>EPOCH
+5요소</em>(Empathy·Presence·Opinion·Creativity·Hope). 인간 고유 능력의
+<em>측정 가능한 다섯 가지 축</em>이 두 권에서 짝지어 등장합니다.</li>
+<li>II의 <em>17개 직업 카탈로그</em>(본론 5 + 부록 12) ↔︎ III의 <em>Skill
+Marketplace 매뉴얼</em>. 자리가 만들어지는 풍경과 그 자리들이
+<em>시장으로 묶이는 풍경</em>이 짝지어 있습니다.</li>
+<li>I의 <em>문제 발견의 기술</em> ↔︎ III의 <em>질문 설계 능력</em>.
+매니저와 시니어의 핵심 능력이 두 권에서 같은 방향으로 진화합니다.</li>
+</ul>
+<hr />
+<h2 id="시리즈가-일관되게-거부한-것">시리즈가 일관되게 거부한 것</h2>
+<p>세 권 모두 <em>일관되게 거부한</em> 한 가지가 있습니다. <em>과장된
+낙관과 과장된 비관</em>.</p>
+<p>각 권이 <em>균형 자료</em>를 본문 안에 박았습니다.</p>
+<ul>
+<li>I — 주니어의 위기를 다루면서 <em>동시에</em> “일자리 소멸은 크게
+과장됐다”(CNN)는 진단을 같이 인용. 위기와 기회를 <em>나란히</em>.</li>
+<li>II — 패턴 가설(<em>AI 인프라 다음에 새 직업이 자란다</em>)을
+던지면서 <em>동시에</em> 막간 9가지 반박 자료를 박음.</li>
+<li>III — <em>AX는 일과 조직의 재설계다</em>를 던지면서 <em>동시에</em>
+Vaccaro의 synergy 부재·Fuller·Raman의 3.6% 실행 등 반박 자료를 막간에
+정리.</li>
+</ul>
+<p>이 일관된 균형이 시리즈의 <em>정직성</em>입니다. <em>컨설팅 광고가
+아닌 매뉴얼</em>. <em>광고는 책 밖에 충분히 많으니, 책은 진심 도입한
+5~37%의 행동 양식만 다룬다</em>는 자리매김.</p>
+<hr />
+<h2 id="세-권이-같이-흐르는-시간-곡선">세 권이 같이 흐르는 시간
+곡선</h2>
+<p>세 권을 <em>시간 곡선</em>에 올려놓으면 한 가지 일관된 그림이
+됩니다.</p>
+<p><strong>오늘</strong> — 시리즈 I이 다룬 <em>내면의 변화</em>.
+<em>코드만 잘 짜면 되는 시대는 끝났다</em>는 인식이 한국 개발자·비개발자
+사이에서 공유되기 시작.</p>
+<p><strong>1~3년</strong> — 시리즈 II가 다룬 <em>직업의 변화</em>. AI
+Product Manager·Forward Deployed Engineer·Applied AI Engineer·Agent
+운영자·Eval Engineer가 한국 채용 시장에서 본격 자리잡는 시점.</p>
+<p><strong>3~7년</strong> — 시리즈 III가 다룬 <em>조직의 변화</em>. 한국
+대기업 중 일부가 <em>Schneider 수준의 ITM</em>을 가동하고, <em>EPOCH
+기반 평가표</em>가 정착하고, <em>Cornell 인과 카드</em>가 한국 평가
+문화에서 재현되는 시점.</p>
+<p>세 권이 <em>시간 단위가 다른 변화</em>를 같은 방향에서 그렸습니다.
+<em>오늘의 내면 변화가 1~3년의 직업 변화로, 그리고 3~7년의 조직 변화로
+자란다</em>는 곡선.</p>
+<hr />
+<h2 id="시리즈가-남긴-한-줄">시리즈가 남긴 한 줄</h2>
+<p>본서 <em>요약본</em>의 한 줄이 결국 시리즈 세 권의 한 줄입니다.</p>
+<blockquote>
+<p><em>코드 너머의 시대를 사는 사람의 자리에서, 코드 너머의 직업이
+자라고, 코드 너머의 조직이 자란다.</em></p>
+</blockquote>
+<p>내면이 바뀌면 외형이 바뀌고, 외형이 바뀌면 환경이 바뀌는 순환. 한
+차원만 자라서는 안 되고, 세 차원이 <em>동시에</em> 자라야 시리즈의
+풍경이 완성됩니다.</p>
+<p>각 차원의 <em>시그니처 자산</em>이 한 줄로 정리됩니다.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>차원</th>
+<th>시그니처 한 줄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>내면</td>
+<td><em>기술이 아무리 바뀌어도, 결국 남는 것은 사람이다.</em></td>
+</tr>
+<tr>
+<td>외형</td>
+<td><em>어떤 자리에서 살아남을지는 </em>현직에서의 가장 짧은 점프<em>가
+결정한다.</em></td>
+</tr>
+<tr>
+<td>환경</td>
+<td><em>AX는 기술 도입이 아니라 일과 조직의 재설계다.</em></td>
+</tr>
+</tbody>
+</table>
+<p>세 줄을 한 자리에 놓으면, <em>코드 너머의</em> 시리즈가 그린 한
+풍경이 완성됩니다.</p>
+<hr />
+<h2 id="다음-부-안내">다음 부 안내</h2>
+<p>다음 부는 <em>시리즈 전체 핵심 인용 모음</em>입니다. 세 권의 본문에서
+<em>가장 자주 반복된 핵심 인용</em>과 <em>시그니처 데이터</em>를 한
+자리에 모았습니다. 시리즈를 <em>한 번에 보고 싶은 독자</em>를 위한 빠른
+참조용 부록.</p>
+<h1 id="부록.-시리즈-핵심-인용-모음">부록. 시리즈 핵심 인용 모음</h1>
+<p>세 권의 본문에서 <em>가장 결정적인 인용·데이터</em>를 한 자리에
+모았습니다.</p>
+<hr />
+<h2 id="시리즈-i-시대">시리즈 I — 시대</h2>
+<h3 id="핵심-메시지">핵심 메시지</h3>
+<blockquote>
+<p><em>“AI가 당신을 대체하지 않습니다. AI를 사용하는 사람이
+대체합니다.”</em></p>
+</blockquote>
+<h3 id="결정적-데이터-3">결정적 데이터</h3>
+<ul>
+<li>Anthropic 2026 보고서: 개발자의 <em>60%가 AI 사용</em>, <em>완전
+위임 가능 작업은 0~20%</em>.</li>
+<li>Vercel <em>State of Vibe Coding 2025</em>: v0 사용자의 <em>63%가
+비개발자</em>.</li>
+<li>노코드/로코드 시장: 132억 → 455억 달러로 확장 예상. <em>신규 앱의
+75%가 로코드</em>.</li>
+<li>Rakuten 사례: Claude Code가 <em>1,250만 줄 코드베이스에서 7시간 자율
+작업</em>, 정확도 99.9%.</li>
+<li>Stanford: 22~25세 개발자 고용 <em>20% 감소</em>.</li>
+<li>미국 BLS: 2033년까지 <em>17% 성장 전망</em> (균형 자료).</li>
+</ul>
+<h3 id="c-프레임-microsoft">5C 프레임 (Microsoft)</h3>
+<p>Curiosity · Critical Thinking · Creativity · Communication ·
+Character. AI 시대 인간 고유 역량의 다섯 축.</p>
+<hr />
+<h2 id="시리즈-ii-직업들">시리즈 II — 직업들</h2>
+<h3 id="핵심-메시지-1">핵심 메시지</h3>
+<blockquote>
+<p><em>“5년 걸리던 AI 작업이 API 문서와 한가한 오후 한 번이면
+가능해졌습니다.”</em> — Shawn Wang (Swyx)</p>
+</blockquote>
+<blockquote>
+<p><em>“Data Scientists answer questions. ML Engineers build systems. AI
+Engineers ship products.”</em> — Drew Breunig</p>
+</blockquote>
+<h3 id="시차-데이터">시차 데이터</h3>
+<ul>
+<li>PC 시대 <em>12~14년</em> (1981 IBM PC → 1993 MS &gt; IBM)</li>
+<li>인터넷 시대 <em>9~11년</em> (1995 Cisco → 2004 Google IPO)</li>
+<li>모바일 시대 <em>5~6년</em> (2007 iPhone → 2012~13 보급률 50%)</li>
+<li>AI 시대 <em>3~5년</em> 예상</li>
+</ul>
+<h3 id="결정적-수치">결정적 수치</h3>
+<ul>
+<li>Nvidia 시가총액 <em>5조 2,300억 달러</em> (2026/05). 데이터센터 칩
+매출 점유율 <em>81%</em>.</li>
+<li>SaaS 멀티플 압축: Cloud 100 평균 EV/Revenue <em>26x → 20x</em> (3년
+연속 하락).</li>
+<li>LinkedIn AI Engineer 채용 <em>+143.2%</em> (3년).</li>
+<li>Forward Deployed Engineer 채용 <em>+1,165% YoY</em>
+(Bloomberry).</li>
+<li>Schneider Open Talent Market — <em>550,000 시간 unlock, $15M 절감,
+89% 채택</em>.</li>
+</ul>
+<h3 id="본론-5개-직업">본론 5개 직업</h3>
+<table>
+<thead>
+<tr>
+<th>직업</th>
+<th>한국 도착 단계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Product Manager</td>
+<td>도구화 단계</td>
+</tr>
+<tr>
+<td>Forward Deployed Engineer</td>
+<td>재편 중 (SI 빅3)</td>
+</tr>
+<tr>
+<td>Applied AI Engineer</td>
+<td>성숙 (한국에서 가장 활발)</td>
+</tr>
+<tr>
+<td>Agent 운영자 / AgentOps</td>
+<td>운영팀 형태</td>
+</tr>
+<tr>
+<td>Eval Engineer</td>
+<td>가장 늦음</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="시리즈-iii-조직">시리즈 III — 조직</h2>
+<h3 id="핵심-메시지-2">핵심 메시지</h3>
+<blockquote>
+<p><em>“AX는 기술 도입이 아니라 일과 조직의 재설계다.”</em></p>
+</blockquote>
+<blockquote>
+<p><em>“여러분은 미션을 보고 왔습니다. 누가 다트를 던졌다는 이유만으로
+우리가 지금의 열 배를 줄 일은 없습니다.”</em> — Dario Amodei (Anthropic
+CEO)</p>
+</blockquote>
+<blockquote>
+<p><em>“AI 시대 관리자의 가치는 <em>얼마나 많이 아는가</em>가 아니라
+<em>무엇을 질문하는가</em>에서 결정됩니다.”</em> — 한국경제</p>
+</blockquote>
+<blockquote>
+<p><em>“커리어 사다리의 가장 아래 단이 부러지고 있습니다.”</em> — Aneesh
+Raman (LinkedIn)</p>
+</blockquote>
+<h3 id="빅4의-일치된-결론">빅4의 일치된 결론</h3>
+<ul>
+<li><strong>McKinsey</strong> <em>State of AI 2025</em>: 88% 도입 /
+<em>39% EBIT 효과</em>. <em>workflow redesign이 가장 큰 변수</em>.
+<em>21%만 근본 재설계</em>. 고성과 기업 <em>2.8배 ROI</em>.</li>
+<li><strong>BCG</strong> <em>Workforce Transformation 2026</em>: <em>60%
+가치 실패 / 5% future-built</em>. <em>10-20-70 framework</em>.
+trailblazer CEO <em>75% 업스킬링 투자</em>.</li>
+<li><strong>Microsoft</strong> <em>Frontier Firm</em>: 직원 <em>80%
+시간빚</em>. <em>67% vs 40%</em> 에이전트 친숙도 격차.</li>
+<li><strong>Deloitte</strong> <em>Global Human Capital Trends 2025</em>:
+<em>93%·19%</em> 직무 구조 변화 인식·실행 격차. <em>73%·7%</em> 매니저
+재정의 격차. <em>46%</em> legacy mindset 장애.</li>
+</ul>
+<h3 id="결정적-학술">결정적 학술</h3>
+<ul>
+<li><em>EPOCH</em> — Loaiza·Rigobon 2024 MIT Sloan. 인간 고유 능력
+5요소(Empathy·Presence·Opinion·Creativity·Hope).</li>
+<li><em>Cornell 2025</em> — Wiernsperger 외 <em>Management Science</em>.
+성과 보상이 AI 채택을 <em>유의미하게 늘림</em>.</li>
+<li><em>Vaccaro 2024</em> — <em>Nature Human Behaviour</em>. 인간-AI
+결합의 <em>synergy 평균 부재</em> (균형 자료).</li>
+<li><em>Brynjolfsson·Li·Raymond 2023</em> — <em>QJE 2025</em>. 콜센터
+평균 +14%, <em>신입 +34%</em>.</li>
+<li><em>Hackman 1977</em> — 자율팀 <em>5조건</em>이 모두 갖춰져야
+효과.</li>
+</ul>
+<h3 id="한국-시장">한국 시장</h3>
+<ul>
+<li>정부 2026 AX 예산 <em>4,552억</em> (+83.6%).</li>
+<li>삼성SDS·LG CNS·SK 동시 AX 인사 (2025/12).</li>
+<li>롯데 직무기반 인사제도 — <em>동의율 95.3%, 박두환 사장
+승진</em>.</li>
+<li>SKT 양대 CIC — <em>5년 5조 투자, 2030 매출 5조 목표</em>.</li>
+<li>현대해상 콜센터 — <em>AI 도입 후 직무 전환된 7명 전원
+퇴사</em>.</li>
+</ul>
+<hr />
+<h2 id="시리즈-전체의-균형-자료">시리즈 전체의 균형 자료</h2>
+<p>세 권이 일관되게 박은 <em>반박·균형 자료</em>가 한 자리에
+있습니다.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>권</th>
+<th>균형 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>CNN — <em>“일자리 소멸은 크게 과장”</em> / Stanford — 신입 20%
+감소</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Anthropic Index — <em>신입 -14% 진입</em> / Acemoglu 2024 — <em>TFP
+0.66%</em></td>
+</tr>
+<tr>
+<td>III</td>
+<td>Vaccaro 2024 — synergy 부재 / Fuller·Raman 2024 — <em>3.6% 실행</em>
+/ Vallas·Schor 2020 — <em>permissive potentate</em></td>
+</tr>
+</tbody>
+</table>
+<p>세 권 모두 <em>과장된 낙관과 과장된 비관 사이</em>에 자리잡은
+매뉴얼입니다.</p>
+<hr />
+<h2 id="원작-세-권-어디서-읽나">원작 세 권 — 어디서 읽나</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>권</th>
+<th>라이브 페이지</th>
+<th>EPUB 다운로드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I. 코드 너머의 시대</td>
+<td>https://ksangki.github.io/beyond-code-era/</td>
+<td>코드-너머의-시대-v1.0.0.epub</td>
+</tr>
+<tr>
+<td>II. 코드 너머의 직업들</td>
+<td>https://ksangki.github.io/beyond-code-jobs/</td>
+<td>코드-너머의-직업들-v1.1.0.epub</td>
+</tr>
+<tr>
+<td>III. 코드 너머의 조직</td>
+<td>https://ksangki.github.io/beyond-code-org/</td>
+<td>코드-너머의-조직-v1.1.0.epub</td>
+</tr>
+<tr>
+<td>요약본 (본서)</td>
+<td>https://ksangki.github.io/beyond-code-summary/</td>
+<td>코드-너머의-시리즈-v1.0.0.epub</td>
+</tr>
+</tbody>
+</table>
+<p>요약본 한 줄로 시리즈를 만나신 다음, <em>더 자세히 읽고 싶은
+권</em>을 직접 펼치시기 바랍니다.</p>
+<h1 id="에필로그.-다음으로">에필로그. 다음으로</h1>
+<p>세 권을 한 권에 압축한 70쪽이 끝났습니다.</p>
+<p>이 요약본의 한 줄을 마지막에 한 번 더 짚어 두겠습니다.</p>
+<blockquote>
+<p><em>코드 너머의 시대를 사는 사람의 자리에서, 코드 너머의 직업이
+자라고, 코드 너머의 조직이 자란다.</em></p>
+</blockquote>
+<p>이 한 줄을 <em>기억해 두는 것</em>만으로도 시리즈를 읽은 셈입니다.
+다만 <em>기억과 행동 사이</em>에는 거리가 있습니다. 그 거리를 좁히는 데
+<em>세 권의 본문</em>이 필요합니다.</p>
+<hr />
+<h2 id="어느-권부터-읽으면-좋은가">어느 권부터 읽으면 좋은가</h2>
+<p>요약본을 통과한 분께 <em>어느 권을 먼저 펼치면 좋은지</em>를 짧게
+안내합니다.</p>
+<ul>
+<li><em>개발자·비개발자로서 AI 시대 역량을 키우고 싶다면</em> → 시리즈 I
+<em>코드 너머의 시대</em>. 가장 광범위한 독자층을 다룹니다.</li>
+<li><em>현직에서 어디로 옮겨갈지 고민 중이라면</em> → 시리즈 II <em>코드
+너머의 직업들</em>. 5개 본론 직업 + 12개 부록 직군의 도감.</li>
+<li><em>조직 차원의 AX 전환을 고민 중이라면</em> → 시리즈 III <em>코드
+너머의 조직</em>. HR 리더와 기술 리더가 같은 본문 안에서 만나는
+자리.</li>
+</ul>
+<p>세 권을 <em>순서대로</em> 읽으시는 것을 권하지만, <em>자기 현재
+자리</em>에서 가장 가까운 권 한 권만 읽어도 충분합니다.</p>
+<hr />
+<h2 id="시리즈가-끝나지-않은-자리">시리즈가 끝나지 않은 자리</h2>
+<p>세 권이 <em>완성된 답</em>은 아닙니다. <em>2판 보강</em>으로 남겨둔
+자리가 시리즈 곳곳에 있습니다.</p>
+<ul>
+<li>시리즈 I — 한국 대기업의 <em>AI 활용 평가 항목</em> 적용 사례.</li>
+<li>시리즈 II — 한국 <em>Agent 운영자·Eval Engineer</em> 채용의 정착
+시점.</li>
+<li>시리즈 III — 한국형 ITM 운영 <em>인터뷰 5명 후보</em>. Cornell
+2025의 <em>한국 재현 검증</em>.</li>
+</ul>
+<p>이 자리들이 채워지는 <em>1~2년의 시점</em>에 시리즈가 <em>2판으로
+자라기를</em> 기대합니다. 그때 이 요약본도 한 번 더 갱신될 것입니다.</p>
+<hr />
+<h2 id="감사의-말">감사의 말</h2>
+<p>이 시리즈가 가능했던 것은 <em>글로벌 학자와 산업 실무자들이 공개한
+자료</em> 덕분입니다. McKinsey·BCG·Microsoft·Deloitte의 빅4 리포트, MIT
+Sloan·HBS·Cornell·Stanford의 학술, Schneider Electric·Unilever·IBM의
+케이스 스터디, 한국 People Analytics 리더들과 영주.dev·SK Devocean의
+한국 자료. 이 자료들이 <em>무료로 공개</em>되어 있지 않았다면 시리즈가
+없었을 것입니다.</p>
+<p>저는 SKT에서 일합니다. 시리즈에는 <em>공개 자료와 외부 관찰만</em>
+들어갔지만, <em>한국에서 일하는 한 직장인의 시선</em>이 책 전체의 톤을
+결정했습니다. 한국 회사 안에서 일하는 <em>수많은 HR 리더·기술
+리더·개발자·PM</em>이 <em>비슷한 풍경</em>을 다른 자리에서 보고 있을
+것입니다. 이 시리즈가 그 풍경의 <em>공유된 언어</em>가 되기를
+기대합니다.</p>
+<hr />
+<h2 id="마지막-한-문장">마지막 한 문장</h2>
+<p>본 요약본의 마지막 한 문장입니다.</p>
+<p><em>사람의 자리는 새로 만들어집니다. 그 자리에서, 당신을 기다리고
+있습니다.</em></p>
+<p>읽어주셔서 감사합니다.</p>
+<p><em>— 김상기, 2026년 5월</em></p>
+</main>
+</div>
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑</button>
+<script>
+window.addEventListener('scroll', () => {
+  document.querySelector('.back-top').classList.toggle('show', window.scrollY > 300);
+});
+</script>
+</body></html>
