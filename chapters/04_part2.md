@@ -66,7 +66,7 @@ Hamel Husain·Shankar: *"60-80%의 개발 시간을 error analysis에 쓴다."* 
 | Applied AI Engineer | 성숙 ★★★★★ | 카카오·네이버·토스·당근·업스테이지·뤼튼 |
 | FDE | 재편 중 ★★★★ | LG CNS·삼성SDS·업스테이지 |
 | AI PM | 도구화 단계 ★★★ | 토스·당근·카카오·뤼튼 |
-| Agent 운영자 | 운영팀 형태 ★★ | SK 에이닷 운영팀 |
+| Agent 운영자 | 운영팀 형태 ★★ | 국내 대형 AI 서비스 운영팀 |
 | Eval Engineer | 가장 늦음 ★ | 업스테이지(LLM Evaluation) |
 
 ## 2부의 한 줄 회수

@@ -9,7 +9,7 @@
 ## 읽기
 
 - **웹 버전**: [GitHub Pages에서 읽기](https://ksangki.github.io/beyond-code-summary/)
-- **EPUB**: [`코드-너머의-시리즈-v1.0.0.epub`](코드-너머의-시리즈-v1.0.0.epub) 다운로드
+- **EPUB**: [`코드-너머의-시리즈-v1.1.0.epub`](코드-너머의-시리즈-v1.1.0.epub) 다운로드
 
 ## 목차
 

@@ -36,9 +36,9 @@
 
 ## 감사의 말
 
-이 시리즈가 가능했던 것은 *글로벌 학자와 산업 실무자들이 공개한 자료* 덕분입니다. McKinsey·BCG·Microsoft·Deloitte의 빅4 리포트, MIT Sloan·HBS·Cornell·Stanford의 학술, Schneider Electric·Unilever·IBM의 케이스 스터디, 한국 People Analytics 리더들과 영주.dev·SK Devocean의 한국 자료. 이 자료들이 *무료로 공개*되어 있지 않았다면 시리즈가 없었을 것입니다.
+이 시리즈가 가능했던 것은 *글로벌 학자와 산업 실무자들이 공개한 자료* 덕분입니다. McKinsey·BCG·Microsoft·Deloitte의 빅4 리포트, MIT Sloan·HBS·Cornell·Stanford의 학술, Schneider Electric·Unilever·IBM의 케이스 스터디, 한국 People Analytics 리더들과 영주.dev·DEVOCEAN의 한국 자료. 이 자료들이 *무료로 공개*되어 있지 않았다면 시리즈가 없었을 것입니다.
 
-저는 SKT에서 일합니다. 시리즈에는 *공개 자료와 외부 관찰만* 들어갔지만, *한국에서 일하는 한 직장인의 시선*이 책 전체의 톤을 결정했습니다. 한국 회사 안에서 일하는 *수많은 HR 리더·기술 리더·개발자·PM*이 *비슷한 풍경*을 다른 자리에서 보고 있을 것입니다. 이 시리즈가 그 풍경의 *공유된 언어*가 되기를 기대합니다.
+시리즈에는 *공개 자료와 외부 관찰만* 들어갔지만, *한국에서 일하는 한 직장인의 시선*이 책 전체의 톤을 결정했습니다. 한국 회사 안에서 일하는 *수많은 HR 리더·기술 리더·개발자·PM*이 *비슷한 풍경*을 다른 자리에서 보고 있을 것입니다. 이 시리즈가 그 풍경의 *공유된 언어*가 되기를 기대합니다.
 
 ---
 
