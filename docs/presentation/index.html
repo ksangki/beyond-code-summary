@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>코드 너머의 시리즈 요약본 — 36슬라이드</title>
+<title>코드 너머의 시리즈 요약본 — 38슬라이드</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <style>
   :root {
@@ -50,6 +50,7 @@
   .eyebrow.mint { color:var(--mint); } .eyebrow.magenta { color:var(--magenta); }
   .content-title { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; margin:12px 0 16px;
     line-height:1.25; }
+  .content-sub { font-size:14px; color:var(--muted); margin:-8px 0 16px; line-height:1.6; max-width:880px; }
   .neon-bar { width:80px; height:3px; background:var(--cyan); margin-bottom:28px; }
   .neon-bar.amber { background:var(--amber); } .neon-bar.mint { background:var(--mint); }
   .neon-bar.magenta { background:var(--magenta); } .neon-bar.cyan { background:var(--cyan); }
@@ -112,15 +113,23 @@
   .quote-by { font-size:14px; color:var(--muted); margin:8px 0 0; }
 
   .grid { display:grid; gap:16px; margin-top:8px; }
+  .grid.grid-2 { grid-template-columns:repeat(2,1fr); }
   .grid.grid-3 { grid-template-columns:repeat(3,1fr); }
-  .grid.grid-4 { grid-template-columns:repeat(2,1fr); }
+  .grid.grid-4 { grid-template-columns:repeat(4,1fr); }
   .grid.grid-5 { grid-template-columns:repeat(5,1fr); }
-  @media (max-width:1000px) { .grid.grid-3, .grid.grid-4, .grid.grid-5 { grid-template-columns:1fr; } }
+  @media (max-width:1000px) { .grid.grid-2,.grid.grid-3,.grid.grid-4,.grid.grid-5 { grid-template-columns:1fr; } }
   .card { background:var(--surface); border:1px solid var(--line); border-radius:8px;
     padding:18px; display:flex; flex-direction:column; gap:10px; }
   .card-num { color:var(--cyan); font-size:12px; font-weight:700; letter-spacing:0.08em; }
+  .card-num.amber { color:var(--amber); } .card-num.mint { color:var(--mint); } .card-num.magenta { color:var(--magenta); }
   .card-h { font-size:14px; font-weight:700; line-height:1.4; }
   .card-sub { font-size:12.5px; color:var(--muted); line-height:1.55; }
+  .card-big-num { font-size:36px; font-weight:800; font-family:"JetBrains Mono",monospace; line-height:1; }
+  .card-big-num.cyan { color:var(--cyan); }
+  .card-big-num.amber { color:var(--amber); }
+  .card-big-num.mint { color:var(--mint); }
+  .card-big-num.magenta { color:var(--magenta); }
+  .card-big-label { font-size:11px; color:var(--dim); letter-spacing:0.05em; margin-top:4px; }
 
   table { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px;
     background:var(--surface); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
@@ -129,6 +138,8 @@
   table td, table tbody th { padding:12px 16px; border-top:1px solid var(--line); line-height:1.5; }
   table tbody th { color:var(--amber); font-weight:700; }
   table tbody tr:hover { background:rgba(255,77,166,0.04); }
+  table.compact td, table.compact tbody th { padding:10px 14px; font-size:12.5px; }
+  table .num { font-family:"JetBrains Mono",monospace; color:var(--mint); font-weight:600; }
 
   .three-books-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px; }
   @media (max-width:1000px) { .three-books-grid { grid-template-columns:1fr; } }
@@ -149,6 +160,15 @@
   .bb-q { font-size:14px; color:var(--muted); margin-top:4px; }
   .bb-link { font-size:11px; color:var(--dim); margin-top:auto; padding-top:8px; }
 
+  .quote-list { display:grid; gap:14px; margin-top:8px; }
+  .ql-item { background:var(--surface); border-left:3px solid var(--cyan); border-radius:0 8px 8px 0;
+    padding:14px 18px; }
+  .ql-item.amber { border-left-color:var(--amber); }
+  .ql-item.mint { border-left-color:var(--mint); }
+  .ql-item.magenta { border-left-color:var(--magenta); }
+  .ql-text { font-size:14px; line-height:1.6; }
+  .ql-source { font-size:11.5px; color:var(--dim); margin-top:6px; font-family:"JetBrains Mono",monospace; }
+
   @media print { .topbar, .progress-bar { display:none; }
     .slide { page-break-after:always; min-height:auto; border:none; } }
 </style>
@@ -157,7 +177,7 @@
 <header class="topbar">
   <div class="left">
     <a href="https://github.com/ksangki/beyond-code-summary" class="logo">코드 너머의 시리즈 요약본</a>
-    <span class="mono"><button class="nav-btn" onclick="goPrev()">‹</button> <span id="page-indicator">01 / 36</span> <button class="nav-btn" onclick="goNext()">›</button></span>
+    <span class="mono"><button class="nav-btn" onclick="goPrev()">‹</button> <span id="page-indicator">01 / 38</span> <button class="nav-btn" onclick="goNext()">›</button></span>
   </div>
   <div class="right">
     <a class="book-link" href="https://ksangki.github.io/beyond-code-era/" target="_blank">I · 시대 ↗</a>
@@ -168,6 +188,7 @@
 <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
 <main>
 
+<!-- 01 COVER -->
 <section class="slide cover" id="s1" data-n="1">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
@@ -195,12 +216,11 @@
       </a>
     </div>
     <div class="cover-meta">
-      <span>김상기 · 36슬라이드 요약 덱 · 약 1.5시간 분량</span>
+      <span>김상기 · 38슬라이드 요약 덱 · 약 1.5시간 분량</span>
       <span class="mono dim">ksangki/beyond-code-summary · v1.1.0</span>
     </div>
   </div>
-  
-  <div class="page-num mono">001 / 036</div>
+  <div class="page-num mono">001 / 038</div>
   <div class="page-section mono">OPENING / 01</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -208,28 +228,22 @@
   </div>
 </section>
 
+<!-- 02 BOOK META -->
 <section class="slide content" id="s2" data-n="2">
-  <div class="eyebrow cyan">BOOK INTRO</div>
-  <h2 class="content-title">이 책은 — 70쪽 · 1시간 30분 · 입구이자 출구</h2>
+  <div class="eyebrow cyan">ABOUT</div>
+  <h2 class="content-title">이 요약본은 — 70쪽, 1시간 30분, 입구이자 출구</h2>
   <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">세 권 약 700쪽의 핵심 메시지·시그니처 자산·결정적 데이터만 압축</div>
-        <div class="card-sub">원작 세 권을 압축한 요약본. 1.5시간이면 시리즈 전체를 훑을 수 있습니다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">시리즈 미독자에게는 어느 권을 먼저 읽을지의 안내</div>
-        <div class="card-sub">처음 만나는 독자에게는 시리즈의 입구 역할.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">이미 읽은 독자에게는 한 번 더 회수</div>
-        <div class="card-sub">독자에게는 다시 정리하고 동료에게 추천할 때 쓰는 출구.</div>
-      </div></div>
-  
-  <div class="page-num mono">002 / 036</div>
+  <p class="content-sub">세 권 약 700쪽을 한 권에 압축. *처음 만나는 독자*에게는 어느 권부터 펼칠지의 안내, *이미 읽은 독자*에게는 다시 회수, *동료에게 권하는 독자*에게는 한 줄 요약. 입구이자 출구의 두 얼굴.</p>
+  <table class="compact">
+    <thead><tr><th>읽는 분</th><th>어떻게 쓰는가</th><th>걸리는 시간</th></tr></thead>
+    <tbody>
+      <tr><th>시리즈 미독자</th><td>입구 — 어느 권을 먼저 펼칠지 자기 자리에서 정함</td><td><span class="num">1.5시간</span></td></tr>
+      <tr><th>이미 읽은 독자</th><td>출구 — 한 번 더 회수, 시그니처 자산 14개 모음</td><td><span class="num">40분</span></td></tr>
+      <tr><th>동료에게 권하는 분</th><td>한 줄 안내 — 내면·외형·환경 셋 중 어디부터인지</td><td><span class="num">5분</span></td></tr>
+      <tr><th>발표 자료로 쓰는 분</th><td>이 덱 자체 — 38장 · 약 1.5시간 분량</td><td><span class="num">90분</span></td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">002 / 038</div>
   <div class="page-section mono">OPENING / 02</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -237,16 +251,17 @@
   </div>
 </section>
 
+<!-- 03 THREE BOOKS -->
 <section class="slide content" id="s3" data-n="3">
   <div class="eyebrow magenta">THE SERIES</div>
-  <h2 class="content-title">코드 너머의 시리즈 세 권</h2>
+  <h2 class="content-title">시리즈 세 권 — 내면 · 외형 · 환경</h2>
   <div class="neon-bar magenta small"></div>
   <div class="three-books-grid">
     <a href="https://ksangki.github.io/beyond-code-era/" class="bookcard-big cyan">
       <div class="bb-num mono cyan">I</div>
       <div class="bb-divider cyan"></div>
       <div class="bb-title">코드 너머의 시대</div>
-      <div class="bb-layer cyan">사람의 내면</div>
+      <div class="bb-layer cyan">사람의 내면 · 역량과 태도</div>
       <div class="bb-q">어떤 사람으로 살아남을까</div>
       <div class="bb-link mono">github.com/ksangki/beyond-code-era ↗</div>
     </a>
@@ -254,7 +269,7 @@
       <div class="bb-num mono amber">II</div>
       <div class="bb-divider amber"></div>
       <div class="bb-title">코드 너머의 직업들</div>
-      <div class="bb-layer amber">사람의 외형</div>
+      <div class="bb-layer amber">사람의 외형 · 직업과 자리</div>
       <div class="bb-q">어떤 자리에서 살아남을까</div>
       <div class="bb-link mono">github.com/ksangki/beyond-code-jobs ↗</div>
     </a>
@@ -262,13 +277,12 @@
       <div class="bb-num mono mint">III</div>
       <div class="bb-divider mint"></div>
       <div class="bb-title">코드 너머의 조직</div>
-      <div class="bb-layer mint">사람의 환경</div>
+      <div class="bb-layer mint">사람의 환경 · 조직과 운영 모델</div>
       <div class="bb-q">어떤 조직으로 살아남을까</div>
       <div class="bb-link mono">github.com/ksangki/beyond-code-org ↗</div>
     </a>
   </div>
-  
-  <div class="page-num mono">003 / 036</div>
+  <div class="page-num mono">003 / 038</div>
   <div class="page-section mono">OPENING / 03</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -276,13 +290,19 @@
   </div>
 </section>
 
-<section class="slide quote" id="s4" data-n="4">
-  <div class="big-quote magenta">"</div>
-  <p class="quote-text">코드 너머의 시대를 사는 사람의 자리에서,<br>코드 너머의 직업이 자라고,<br>코드 너머의 조직이 자란다.</p>
+<!-- 04 WHY NOW -->
+<section class="slide content" id="s4" data-n="4">
+  <div class="eyebrow magenta">WHY NOW · 2026</div>
+  <h2 class="content-title">왜 지금 세 권을 같은 해에 — 분기점의 신호</h2>
   <div class="neon-bar magenta small"></div>
-  <p class="quote-by">— 시리즈 한 줄 회수</p>
-  
-  <div class="page-num mono">004 / 036</div>
+  <p class="content-sub">2025~2026년이 AX 시대의 분기점이라는 진단이 *세 권 동시 출간*의 이유. McKinsey·BCG·Microsoft·Deloitte가 같은 분기에 같은 결론을 던졌고, 한국 정부가 AX 예산을 +83.6% 증액했으며, 삼성SDS·LG CNS·SK가 같은 분기에 AX 인사를 단행했습니다.</p>
+  <div class="grid grid-4">
+    <div class="card"><div class="card-big-num mono magenta">+83.6%</div><div class="card-big-label">한국 정부 2026 AX 예산</div><div class="card-sub">4,552억 원 — 전년 대비 83.6% 증액.</div></div>
+    <div class="card"><div class="card-big-num mono cyan">$5.23T</div><div class="card-big-label">Nvidia 시가총액 (2026.05)</div><div class="card-sub">데이터센터 칩 매출 점유율 81%.</div></div>
+    <div class="card"><div class="card-big-num mono amber">5%</div><div class="card-big-label">future-built 기업 (BCG)</div><div class="card-sub">60%는 가치 창출 실패. 5%만 future-built.</div></div>
+    <div class="card"><div class="card-big-num mono mint">88 / 39</div><div class="card-big-label">도입 % / EBIT 효과 % (McKinsey)</div><div class="card-sub">88% 도입, 39%만 EBIT 효과. 21%만 워크플로우 재설계.</div></div>
+  </div>
+  <div class="page-num mono">004 / 038</div>
   <div class="page-section mono">OPENING / 04</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -290,96 +310,8 @@
   </div>
 </section>
 
-<section class="slide content" id="s5" data-n="5">
-  <div class="eyebrow cyan">WHO &amp; HOW</div>
-  <h2 class="content-title">누가 어떻게 읽으면 좋은가</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">시리즈 세 권을 한 번에 훑고 싶은 독자</div>
-        <div class="card-sub">입구 — 1부에서 4부까지 순서대로. 약 1.5시간.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">시리즈 미독자가 들어가는 입구가 필요한 분</div>
-        <div class="card-sub">어느 권을 먼저 읽을지 안내.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">이미 읽은 독자가 한 번 더 회수</div>
-        <div class="card-sub">핵심 메시지·시그니처 자산만 모은 형태.</div>
-      </div></div>
-  
-  <div class="page-num mono">005 / 036</div>
-  <div class="page-section mono">OPENING / 05</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide quote" id="s6" data-n="6">
-  <div class="big-quote cyan">"</div>
-  <p class="quote-text">시리즈가 그린 한 풍경 —<br>내면 · 외형 · 환경,<br>세 층을 차례로 통과한다.</p>
-  <div class="neon-bar cyan small"></div>
-  <p class="quote-by">— 프롤로그</p>
-  
-  <div class="page-num mono">006 / 036</div>
-  <div class="page-section mono">PROLOGUE / 06</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide content" id="s7" data-n="7">
-  <div class="eyebrow cyan">STRUCTURE</div>
-  <h2 class="content-title">시리즈 3권의 구조 — 내면 → 외형 → 환경</h2>
-  <div class="neon-bar cyan small"></div>
-  <table class="data">
-    <thead><tr><th>권</th><th>다루는 차원</th><th>핵심 질문</th></tr></thead>
-    <tbody><tr><th>I 코드 너머의 시대</th><td>사람의 내면 (역량·태도)</td><td>어떤 사람으로 살아남을까</td></tr><tr><th>II 코드 너머의 직업들</th><td>사람의 외형 (직업·자리)</td><td>어떤 자리에서 살아남을까</td></tr><tr><th>III 코드 너머의 조직</th><td>사람의 환경 (조직)</td><td>어떤 조직으로 살아남을까</td></tr></tbody>
-  </table>
-  
-  <div class="page-num mono">007 / 036</div>
-  <div class="page-section mono">PROLOGUE / 07</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide content" id="s8" data-n="8">
-  <div class="eyebrow cyan">WHY NOW</div>
-  <h2 class="content-title">왜 지금 — 세 풍경이 동시에 변하는 시대</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">내면 — AI 시대에 어떤 역량·태도가 살아남는가</div>
-        <div class="card-sub">공감·판단·창의 같은 EPOCH 요소가 다시 일의 중심으로.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">외형 — 직업이 새로 만들어지는 시기</div>
-        <div class="card-sub">AI PM·FDE·Applied AI·AgentOps·Eval — 인프라 뒤를 따라간다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">환경 — 일과 조직이 재설계되는 시기</div>
-        <div class="card-sub">DX가 아니라 AX. 도구 도입이 아니라 일·조직의 재설계.</div>
-      </div></div>
-  
-  <div class="page-num mono">008 / 036</div>
-  <div class="page-section mono">PROLOGUE / 08</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide divider" id="s9" data-n="9">
+<!-- 05 PART I DIVIDER -->
+<section class="slide divider" id="s5" data-n="5">
   <div class="div-grid">
     <div class="div-left">
       <div class="eyebrow cyan">PART I</div>
@@ -388,11 +320,91 @@
     <div class="div-right">
       <div class="neon-bar cyan small"></div>
       <h2 class="div-title">코드 너머의 시대</h2>
-      <p class="div-sub">사람의 내면 — 어떤 사람으로 살아남을까</p>
+      <p class="div-sub">사람의 *내면* — 어떤 사람으로 살아남을까. 시리즈 첫 권은 *역량과 태도*의 차원에서 AI 시대를 풀었습니다.</p>
     </div>
   </div>
-  
-  <div class="page-num mono">009 / 036</div>
+  <div class="page-num mono">005 / 038</div>
+  <div class="page-section mono">PART 1 / 05</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 06 KEY QUOTE I -->
+<section class="slide quote" id="s6" data-n="6">
+  <div class="big-quote cyan">"</div>
+  <p class="quote-text">AI가 당신을 대체하지 않습니다.<br>AI를 사용하는 사람이 대체합니다.</p>
+  <div class="neon-bar cyan small"></div>
+  <p class="quote-by">— 시리즈 I 핵심 메시지</p>
+  <div class="page-num mono">006 / 038</div>
+  <div class="page-section mono">PART 1 / 06</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 07 KEY DATA I -->
+<section class="slide content" id="s7" data-n="7">
+  <div class="eyebrow cyan">DATA · I</div>
+  <h2 class="content-title">결정적 데이터 — 시대의 풍경</h2>
+  <div class="neon-bar cyan small"></div>
+  <p class="content-sub">시리즈 I이 들이댄 *결정적 수치 6개*. 개발자의 AI 사용률·도구 사용자 구성·자율 작업 가능성·신입 고용 변동·노코드 시장·균형 자료까지 한 자리에.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-big-num mono cyan">60%</div><div class="card-big-label">Anthropic 2026 · 개발자 AI 사용</div><div class="card-sub">동시에 *완전 위임 가능 작업은 0~20%*. 도구화는 빠르지만 자율은 아직.</div></div>
+    <div class="card"><div class="card-big-num mono cyan">63%</div><div class="card-big-label">Vercel · v0 사용자 비개발자</div><div class="card-sub">*State of Vibe Coding 2025*. 비개발자가 도구의 주류로.</div></div>
+    <div class="card"><div class="card-big-num mono cyan">99.9%</div><div class="card-big-label">Rakuten · Claude Code 정확도</div><div class="card-sub">1,250만 줄 코드베이스에서 *7시간 자율 작업*.</div></div>
+    <div class="card"><div class="card-big-num mono amber">-20%</div><div class="card-big-label">Stanford · 22~25세 개발자 고용</div><div class="card-sub">신입 진입의 사다리가 흔들리는 신호.</div></div>
+    <div class="card"><div class="card-big-num mono cyan">75%</div><div class="card-big-label">신규 앱 로코드 비중</div><div class="card-sub">노코드/로코드 시장 132억 → 455억 달러 확장 예상.</div></div>
+    <div class="card"><div class="card-big-num mono mint">+17%</div><div class="card-big-label">BLS · 2033년까지 개발자 성장</div><div class="card-sub">균형 자료. *일자리 소멸은 크게 과장*(CNN)과 짝지어 인용.</div></div>
+  </div>
+  <div class="page-num mono">007 / 038</div>
+  <div class="page-section mono">PART 1 / 07</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 08 5C FRAME -->
+<section class="slide content" id="s8" data-n="8">
+  <div class="eyebrow cyan">5C FRAME · MICROSOFT</div>
+  <h2 class="content-title">5C 프레임 — AI 시대 인간 고유 역량의 다섯 축</h2>
+  <div class="neon-bar cyan small"></div>
+  <p class="content-sub">Microsoft가 정리한 *5C 프레임*. AI 시대에 사람에게 남는 역량 다섯 축. 5C 프레임이 III권 *EPOCH 5요소*와 짝지어 시리즈 좌표를 만듭니다.</p>
+  <div class="grid grid-5">
+    <div class="card"><div class="card-num mono">C1</div><div class="card-h">Curiosity · 호기심</div><div class="card-sub">새 도구·새 영역에 빠르게 손대는 태도.</div></div>
+    <div class="card"><div class="card-num mono">C2</div><div class="card-h">Critical Thinking · 비판적 사고</div><div class="card-sub">AI 출력의 검증·반박·정렬.</div></div>
+    <div class="card"><div class="card-num mono">C3</div><div class="card-h">Creativity · 창의성</div><div class="card-sub">기존 패턴을 깨는 새 조합.</div></div>
+    <div class="card"><div class="card-num mono">C4</div><div class="card-h">Communication · 소통</div><div class="card-sub">사람과 모델 양쪽에 대한 명확성.</div></div>
+    <div class="card"><div class="card-num mono">C5</div><div class="card-h">Character · 인격·정렬</div><div class="card-sub">의미·윤리·정직. 가장 늦게 자동화될 자리.</div></div>
+  </div>
+  <div class="page-num mono">008 / 038</div>
+  <div class="page-section mono">PART 1 / 08</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 09 EPOCH FOR I -->
+<section class="slide content" id="s9" data-n="9">
+  <div class="eyebrow cyan">EPOCH · MIT SLOAN</div>
+  <h2 class="content-title">EPOCH — 인간 고유 능력 5요소</h2>
+  <div class="neon-bar cyan small"></div>
+  <p class="content-sub">Loaiza·Rigobon (MIT Sloan, 2024) 프레임. *AI가 가장 따라잡기 어려운 다섯 가지*. 시리즈 I이 *내면*에서 다뤘고, 시리즈 III이 *조직의 평가표*로 옮겼습니다.</p>
+  <table class="compact">
+    <thead><tr><th>요소</th><th>의미</th><th>일터에서 어디서 살아남는가</th></tr></thead>
+    <tbody>
+      <tr><th>E · Empathy 공감</th><td>타인의 상태를 읽어 동조하는 능력</td><td>고객 응대·코치·심리 케어</td></tr>
+      <tr><th>P · Presence 현장 존재감</th><td>현장에 몸으로 있어야 하는 일</td><td>제조 현장·의료·돌봄·소매</td></tr>
+      <tr><th>O · Opinion 판단</th><td>가치 충돌 사이에서 결정</td><td>리더십·법무·윤리·정책</td></tr>
+      <tr><th>C · Creativity 창의성</th><td>새 조합을 만드는 힘</td><td>기획·디자인·연구·작가</td></tr>
+      <tr><th>H · Hope 비전·희망</th><td>아직 없는 미래를 설득</td><td>경영·사업개발·교육</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">009 / 038</div>
   <div class="page-section mono">PART 1 / 09</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -400,13 +412,18 @@
   </div>
 </section>
 
-<section class="slide quote" id="s10" data-n="10">
-  <div class="big-quote cyan">"</div>
-  <p class="quote-text">기술이 사람을 대체하는 것이 아니라,<br>사람의 내면이 다시 일의 중심이 된다.</p>
-  <div class="neon-bar cyan small"></div>
-  <p class="quote-by">— 시대편 핵심 메시지</p>
-  
-  <div class="page-num mono">010 / 036</div>
+<!-- 10 BALANCE I -->
+<section class="slide content" id="s10" data-n="10">
+  <div class="eyebrow amber">BALANCE · I</div>
+  <h2 class="content-title">균형 자료 — 시리즈 I이 거부한 *과장*</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">시리즈 전체가 일관되게 거부한 것은 *과장된 낙관과 과장된 비관*. 시리즈 I의 균형 자료 한 자리.</p>
+  <div class="quote-list">
+    <div class="ql-item amber"><div class="ql-text">"일자리 소멸은 *크게 과장*되었습니다. 직무 구성이 바뀔 뿐, 총량은 BLS 기준 2033년까지 +17% 성장 전망입니다."</div><div class="ql-source">CNN · BLS · 2025</div></div>
+    <div class="ql-item amber"><div class="ql-text">"22~25세 개발자 신입 고용은 *-20%* 감소. 다만 이는 *진입 사다리의 첫 단*에 집중된 변화이며, 시니어급 채용은 안정적입니다."</div><div class="ql-source">Stanford · 2025</div></div>
+    <div class="ql-item amber"><div class="ql-text">"개발자의 60%가 AI를 쓰지만, *완전 위임 가능 작업은 0~20%*. 도구로서의 AI와 자율 에이전트로서의 AI 사이에는 큰 간격이 남아 있습니다."</div><div class="ql-source">Anthropic 2026 보고서</div></div>
+  </div>
+  <div class="page-num mono">010 / 038</div>
   <div class="page-section mono">PART 1 / 10</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -414,28 +431,17 @@
   </div>
 </section>
 
+<!-- 11 SIG I -->
 <section class="slide content" id="s11" data-n="11">
-  <div class="eyebrow cyan">INNER QUALITIES</div>
-  <h2 class="content-title">AI 시대의 사람 — 내면이 먼저</h2>
+  <div class="eyebrow cyan">★ SIG ASSET · I</div>
+  <h2 class="content-title">시리즈 I의 시그니처 자산 — 한 줄로</h2>
   <div class="neon-bar cyan small"></div>
   <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">자동화가 일감의 형태를 바꾸면, 사람의 가치가 어디 남는지가 다시 보인다</div>
-        <div class="card-sub">루틴은 에이전트로, 의미·판단·관계는 사람에게.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">EPOCH 5요소 — 공감 · 실재 · 판단 · 창의 · 희망</div>
-        <div class="card-sub">MIT Sloan 프레임. 사람에게 잔존하는 일의 본질.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">'어떤 도구를 쓰는가'가 아니라 '어떤 사람으로 사는가'</div>
-        <div class="card-sub">역량의 단위가 스킬에서 태도·관계로 확장된다.</div>
-      </div></div>
-  
-  <div class="page-num mono">011 / 036</div>
+    <div class="card"><div class="card-num mono">01</div><div class="card-h">문제 발견의 기술</div><div class="card-sub">답을 빨리 주는 AI 시대에 *어떤 질문을 던지는가*가 결정적이라는 인식. 시리즈 III의 *질문 설계 능력*과 짝지어 진화.</div></div>
+    <div class="card"><div class="card-num mono">02</div><div class="card-h">5C 프레임 한국 독자용 첫 해설</div><div class="card-sub">Microsoft의 *Curiosity·Critical·Creativity·Communication·Character*를 한국 개발자·비개발자에게 일상어로 풀어낸 자리.</div></div>
+    <div class="card"><div class="card-num mono">03</div><div class="card-h">"두려움"을 "관점"으로</div><div class="card-sub">AI 시대를 *위협*이 아니라 *새 풍경*으로 보게 만든 책. 시리즈 II의 *90일 플랜*과 짝지어 행동으로 이어짐.</div></div>
+  </div>
+  <div class="page-num mono">011 / 038</div>
   <div class="page-section mono">PART 1 / 11</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -443,38 +449,13 @@
   </div>
 </section>
 
-<section class="slide content" id="s12" data-n="12">
-  <div class="eyebrow cyan">FIVE TRAITS</div>
-  <h2 class="content-title">살아남는 사람의 5가지 역량</h2>
+<!-- 12 BRIDGE I→II -->
+<section class="slide quote" id="s12" data-n="12">
+  <div class="big-quote cyan">"</div>
+  <p class="quote-text">내면이 자라면<br>자리가 새로 보입니다.<br>다음은 외형 — 코드 너머의 직업들.</p>
   <div class="neon-bar cyan small"></div>
-  <div class="grid grid-5">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">판단·결정 — '무엇을 우선할까'</div>
-        <div class="card-sub">AI가 답을 빨리 주는 시대에, 어떤 질문을 던지는지가 결정적.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">관계·신뢰 — '누구와 같이 일할까'</div>
-        <div class="card-sub">에이전트가 일감을 처리할수록 사람의 관계는 더 깊어진다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">창의·문화 감각 — 패턴을 깨는 새로운 조합</div>
-        <div class="card-sub">도구로는 모방 가능, 정의는 사람.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">04</div>
-        <div class="card-h">학습 속도 — 새 도구를 습관으로 흡수</div>
-        <div class="card-sub">'배움이 빠른 사람'이 다음 자리를 만든다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">05</div>
-        <div class="card-h">의미·정렬 — '이 일을 왜 하나'</div>
-        <div class="card-sub">동기·목적이 또렷한 사람이 멀리 간다.</div>
-      </div></div>
-  
-  <div class="page-num mono">012 / 036</div>
+  <p class="quote-by">— 시리즈 I → II 다리</p>
+  <div class="page-num mono">012 / 038</div>
   <div class="page-section mono">PART 1 / 12</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -482,79 +463,8 @@
   </div>
 </section>
 
-<section class="slide content" id="s13" data-n="13">
-  <div class="eyebrow cyan">SIG ASSET</div>
-  <h2 class="content-title">시대편의 시그니처 자산</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">'AI 시대에 사람의 자리는 어디인가'를 한 권으로 답함</div>
-        <div class="card-sub">외형(직업)이나 환경(조직)이 아닌, 내면(역량·태도)을 다룸.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">EPOCH 5요소의 한국 독자용 첫 대중 해설</div>
-        <div class="card-sub">공감·실재·판단·창의·희망의 일상어 해설.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">'두려움'을 '관점'으로 바꾸는 책</div>
-        <div class="card-sub">AI 시대를 위협이 아니라 새 풍경으로 보게 만든다.</div>
-      </div></div>
-  
-  <div class="page-num mono">013 / 036</div>
-  <div class="page-section mono">PART 1 / 13</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide quote" id="s14" data-n="14">
-  <div class="big-quote cyan">"</div>
-  <p class="quote-text">기술이 빠를수록<br>사람이 어떤 사람으로 사는가가<br>더 또렷이 보인다.</p>
-  <div class="neon-bar cyan small"></div>
-  <p class="quote-by">— 코드 너머의 시대 (I)</p>
-  
-  <div class="page-num mono">014 / 036</div>
-  <div class="page-section mono">PART 1 / 14</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide content" id="s15" data-n="15">
-  <div class="eyebrow cyan">NEXT</div>
-  <h2 class="content-title">시대편 → 다음 권으로</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">내면이 자라면, 자리(외형)가 새로 보인다</div>
-        <div class="card-sub">어떤 사람으로 사는가가 정해지면, 어떤 자리에서 사는가가 다음.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">그래서 II — 코드 너머의 직업들</div>
-        <div class="card-sub">AI 인프라 뒤에 자라는 5개의 새 직업을 해부.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">'어떤 사람으로 살아남을까' → '어떤 자리에서 살아남을까'</div>
-        <div class="card-sub">질문의 단위가 사람에서 자리로 옮겨간다.</div>
-      </div></div>
-  
-  <div class="page-num mono">015 / 036</div>
-  <div class="page-section mono">PART 1 / 15</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide divider" id="s16" data-n="16">
+<!-- 13 PART II DIVIDER -->
+<section class="slide divider" id="s13" data-n="13">
   <div class="div-grid">
     <div class="div-left">
       <div class="eyebrow amber">PART II</div>
@@ -563,11 +473,67 @@
     <div class="div-right">
       <div class="neon-bar amber small"></div>
       <h2 class="div-title">코드 너머의 직업들</h2>
-      <p class="div-sub">사람의 외형 — 어떤 자리에서 살아남을까</p>
+      <p class="div-sub">사람의 *외형* — 어떤 자리에서 살아남을까. AI 인프라 다음에 자라는 *5개 새 직업의 도감*이자 *현직자의 전환 지도*.</p>
     </div>
   </div>
-  
-  <div class="page-num mono">016 / 036</div>
+  <div class="page-num mono">013 / 038</div>
+  <div class="page-section mono">PART 2 / 13</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 14 KEY QUOTE II -->
+<section class="slide quote" id="s14" data-n="14">
+  <div class="big-quote amber">"</div>
+  <p class="quote-text">5년 걸리던 AI 작업이<br>API 문서와 한가한 오후 한 번이면<br>가능해졌습니다.</p>
+  <div class="neon-bar amber small"></div>
+  <p class="quote-by">— Shawn Wang (Swyx), <em>The Rise of the AI Engineer</em> (2023)</p>
+  <div class="page-num mono">014 / 038</div>
+  <div class="page-section mono">PART 2 / 14</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 15 PATTERN TABLE -->
+<section class="slide content" id="s15" data-n="15">
+  <div class="eyebrow amber">PATTERN</div>
+  <h2 class="content-title">패턴은 반복된다 — 네 시대의 같은 순서</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">PC·인터넷·모바일이 *반도체 → 플랫폼 → 앱 → 새 직업*의 같은 순서로 갔습니다. AI도 같은 순서로 가는 중. *시차는 점점 짧아져* 왔습니다.</p>
+  <table class="compact">
+    <thead><tr><th>단계</th><th>PC (12~14년)</th><th>인터넷 (9~11년)</th><th>모바일 (5~6년)</th><th>AI (3~5년)</th></tr></thead>
+    <tbody>
+      <tr><th>① 반도체</th><td>Intel x86</td><td>라우터·광통신</td><td>ARM SoC</td><td><span class="num">GPU · TPU</span></td></tr>
+      <tr><th>② 플랫폼</th><td>Windows</td><td>브라우저·검색</td><td>iOS / Android</td><td><span class="num">Foundation Model</span></td></tr>
+      <tr><th>③ 앱·서비스</th><td>오피스·DB</td><td>포털·이커머스</td><td>앱 생태계</td><td><span class="num">에이전트·코파일럿</span></td></tr>
+      <tr><th>④ 새 직업</th><td>시스템어드민</td><td>웹개발·디지털마케터</td><td>iOS · 모바일PM</td><td><span class="num">AI PM · FDE · Applied AI · AgentOps · Eval</span></td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">015 / 038</div>
+  <div class="page-section mono">PART 2 / 15</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 16 KEY DATA II -->
+<section class="slide content" id="s16" data-n="16">
+  <div class="eyebrow amber">DATA · II</div>
+  <h2 class="content-title">결정적 수치 — 시장의 신호</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">AI 시대 *시장 신호 4개*. Nvidia 시총·SaaS 멀티플 압축·AI 엔지니어 채용 폭증·FDE 채용 폭증. 인프라가 깔리고 사람의 자리가 동시에 자라는 풍경.</p>
+  <div class="grid grid-4">
+    <div class="card"><div class="card-big-num mono cyan">$5.23T</div><div class="card-big-label">Nvidia 시가총액 (2026.05)</div><div class="card-sub">데이터센터 칩 매출 점유율 81% (IDC).</div></div>
+    <div class="card"><div class="card-big-num mono amber">26x → 20x</div><div class="card-big-label">SaaS 멀티플 압축</div><div class="card-sub">Cloud 100 평균 EV/Revenue. *3년 연속 하락*. 가격에서 결과물로.</div></div>
+    <div class="card"><div class="card-big-num mono mint">+143.2%</div><div class="card-big-label">LinkedIn AI Engineer 채용 (3년)</div><div class="card-sub">한국에서도 *가장 활발*. 카카오·네이버·토스·당근·뤼튼·업스테이지.</div></div>
+    <div class="card"><div class="card-big-num mono mint">+1,165%</div><div class="card-big-label">FDE 채용 YoY (Bloomberry 1,000건)</div><div class="card-sub">고객과 직접 협업 55% / AI 시스템 빌드 37% / 매출 책임 0%.</div></div>
+  </div>
+  <div class="page-num mono">016 / 038</div>
   <div class="page-section mono">PART 2 / 16</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -575,13 +541,23 @@
   </div>
 </section>
 
-<section class="slide quote" id="s17" data-n="17">
-  <div class="big-quote amber">"</div>
-  <p class="quote-text">반도체는 먼저 갔고, 사람은 따라간다.<br>그리고 사람의 자리는 새로 만들어진다.</p>
+<!-- 17 FIVE ROLES -->
+<section class="slide content" id="s17" data-n="17">
+  <div class="eyebrow amber">5 ROLES</div>
+  <h2 class="content-title">본론 5개 직업 — 한국 도착 단계와 함께</h2>
   <div class="neon-bar amber small"></div>
-  <p class="quote-by">— 직업편 핵심 메시지</p>
-  
-  <div class="page-num mono">017 / 036</div>
+  <p class="content-sub">PART 3 본론 *5개 직업*을 *같은 다섯 칸 통일 포맷*으로 짰습니다. 같은 칸끼리 비교하면 *직업 도감*. 별점은 한국 시장 도착 단계.</p>
+  <table class="compact">
+    <thead><tr><th>직업</th><th>한 줄</th><th>한국 도착 단계</th><th>가장 가까운 회사</th></tr></thead>
+    <tbody>
+      <tr><th>AI Product Manager</th><td>모델을 제품으로 만드는 사람 · *Evals replace PRDs*</td><td>★★★ 도구화</td><td>토스·당근·카카오·뤼튼</td></tr>
+      <tr><th>Forward Deployed Engineer</th><td>고객 현장에서 모델을 다듬는 사람 · Palantir 원조</td><td>★★★★ 재편 중</td><td>LG CNS·삼성SDS·업스테이지</td></tr>
+      <tr><th>Applied AI Engineer</th><td>백엔드·풀스택의 자연스러운 다음 · RAG + LLMOps</td><td>★★★★★ 성숙</td><td>카카오·네이버·토스·당근·업스테이지</td></tr>
+      <tr><th>Agent 운영자 / AgentOps ⭐</th><td>가장 새롭고 가장 빨리 자라는 자리 · 41~86.7% 실패율의 자리</td><td>★★ 운영팀 형태</td><td>국내 대형 AI 서비스 운영팀</td></tr>
+      <tr><th>Eval Engineer</th><td>품질을 측정하고 책임지는 사람 · QA의 진화형</td><td>★ 가장 늦음</td><td>업스테이지 LLM Evaluation</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">017 / 038</div>
   <div class="page-section mono">PART 2 / 17</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -589,16 +565,20 @@
   </div>
 </section>
 
+<!-- 18 FIVE-CELL FORMAT -->
 <section class="slide content" id="s18" data-n="18">
-  <div class="eyebrow cyan">PATTERN</div>
-  <h2 class="content-title">패턴 반복 — PC · 인터넷 · 모바일 · AI</h2>
-  <div class="neon-bar cyan small"></div>
-  <table class="data">
-    <thead><tr><th>단계</th><th>PC</th><th>인터넷</th><th>모바일</th><th>AI (현재)</th></tr></thead>
-    <tbody><tr><th>① 반도체</th><td>Intel x86</td><td>라우터·광통신</td><td>ARM SoC</td><td>GPU · TPU</td></tr><tr><th>② 플랫폼</th><td>Windows</td><td>브라우저·검색</td><td>iOS/Android</td><td>Foundation Model</td></tr><tr><th>③ 앱·서비스</th><td>오피스·DB</td><td>포털·이커머스</td><td>앱 생태계</td><td>에이전트·코파일럿</td></tr><tr><th>④ 새 직업</th><td>개발자·시스템어드민</td><td>웹개발·디지털마케터</td><td>iOS·모바일PM</td><td>AI PM · FDE · Applied AI · AgentOps · Eval</td></tr></tbody>
-  </table>
-  
-  <div class="page-num mono">018 / 036</div>
+  <div class="eyebrow amber">★ FIVE-CELL FORMAT</div>
+  <h2 class="content-title">시리즈 II 시그니처 — 다섯 칸 통일 포맷</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">5개 직업이 *같은 다섯 칸*으로 비교됩니다. 다섯 칸의 같은 줄끼리 가로로 읽으면 *직업 도감*이 만들어집니다.</p>
+  <div class="grid grid-5">
+    <div class="card"><div class="card-num mono amber">01</div><div class="card-h">하루의 풍경</div><div class="card-sub">가상 인물의 09:00~18:00. 회의·코드·고객 대화의 비율.</div></div>
+    <div class="card"><div class="card-num mono amber">02</div><div class="card-h">무엇이 다른가</div><div class="card-sub">기존 직무와의 경계선. 인접 직군과의 차이 한 문단.</div></div>
+    <div class="card"><div class="card-num mono amber">03</div><div class="card-h">어떤 사람이 잘 맞나</div><div class="card-sub">적합도 자가진단 5문항. 현직 매핑.</div></div>
+    <div class="card"><div class="card-num mono amber">04</div><div class="card-h">한국 채용 신호</div><div class="card-sub">실제 공고 키워드 · 연봉 레인지 · 회사군.</div></div>
+    <div class="card"><div class="card-num mono amber">05</div><div class="card-h">90일 안에 시도할 한 가지</div><div class="card-sub">포트폴리오 · 사이드 프로젝트 · 오픈소스 한 컷.</div></div>
+  </div>
+  <div class="page-num mono">018 / 038</div>
   <div class="page-section mono">PART 2 / 18</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -606,38 +586,26 @@
   </div>
 </section>
 
+<!-- 19 17 CATALOG -->
 <section class="slide content" id="s19" data-n="19">
-  <div class="eyebrow cyan">FIVE ROLES</div>
-  <h2 class="content-title">5개 새 직업 한눈에</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-5">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">AI Product Manager — 모델을 제품으로 만드는 사람</div>
-        <div class="card-sub">프롬프트·Eval·토큰 경제. 일반 PM과 다른 새 PM.</div>
+  <div class="eyebrow amber">17 ROLES</div>
+  <h2 class="content-title">본론 5개 + 부록 12개 — 17개 자리 카탈로그</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">본론 5개 외에 *12개의 인접 직군*이 부록 A에 카탈로그로 정리. 본론 5 + 부록 12 = *17개의 자리*. AI 시대 새 직업의 카탈로그가 한 권에.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="card-num mono amber">기술·제품 인접 7개</div>
+      <div class="card-sub" style="font-size:13px; line-height:1.8;">
+        Solutions Architect (AI) · AI Researcher-in-Residence · AI Sales Engineer · AI Customer Engineer · Prompt Architect · AI Reliability Engineer · AI Compliance·Ethics Engineer
       </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">Forward Deployed Engineer — 현장에서 모델을 다듬는 사람</div>
-        <div class="card-sub">Palantir 모델의 부활. 컨설팅 + 엔지니어링.</div>
+    </div>
+    <div class="card"><div class="card-num mono mint">조직·운영 인접 5개</div>
+      <div class="card-sub" style="font-size:13px; line-height:1.8;">
+        Hybrid Manager · AI Coach · AI Literacy 프로그램 운영자 · AX Communications · Skill Ontology Manager
       </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">Applied AI Engineer — 백엔드·풀스택의 다음 자리</div>
-        <div class="card-sub">RAG·에이전트·LLM API. 가장 진입 장벽이 낮은 자리.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">04</div>
-        <div class="card-h">AgentOps — 에이전트를 운영하는 사람 (시그니처)</div>
-        <div class="card-sub">SRE 다음 자리. 가장 새롭고 가장 비어 있다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">05</div>
-        <div class="card-h">Eval Engineer — 품질을 측정하고 책임지는 사람</div>
-        <div class="card-sub">QA의 진화형. 확률론적 평가의 자리.</div>
-      </div></div>
-  
-  <div class="page-num mono">019 / 036</div>
+    </div>
+  </div>
+  <p class="content-sub" style="margin-top:20px;">조직·운영 인접 5개는 시리즈 III에서 등장한 *디렉터급 새 역할*이 시리즈 II 부록으로 흡수된 자리입니다. 두 시리즈가 한 카탈로그를 공유합니다.</p>
+  <div class="page-num mono">019 / 038</div>
   <div class="page-section mono">PART 2 / 19</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -645,28 +613,18 @@
   </div>
 </section>
 
+<!-- 20 BALANCE II -->
 <section class="slide content" id="s20" data-n="20">
-  <div class="eyebrow cyan">SIG ASSET</div>
-  <h2 class="content-title">직업편의 시그니처 자산</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">5개 새 직업의 도감 — 역할·스킬·연봉·전환 경로</div>
-        <div class="card-sub">한 직업당 5축 분석. 현직과의 거리를 측정 가능.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">현직별 전환 매트릭스</div>
-        <div class="card-sub">백엔드·풀스택·PM·SRE·QA·데이터 엔지니어 → 어디로?</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">90일 플랜 — 자가진단 → 학습 → 실전</div>
-        <div class="card-sub">두려움을 일정표로 바꾸는 첫 90일 가이드.</div>
-      </div></div>
-  
-  <div class="page-num mono">020 / 036</div>
+  <div class="eyebrow amber">BALANCE · II</div>
+  <h2 class="content-title">균형 자료 — 시리즈 II가 직시한 *반박*</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">시리즈 II도 *반박 자료*를 본문 안에 박았습니다. 패턴 가설(AI 인프라 다음 새 직업이 자란다)에 *조건부 굴절*을 주는 학술·산업 자료.</p>
+  <div class="quote-list">
+    <div class="ql-item amber"><div class="ql-text">"신입 *진입 단계*가 -14%로 줄었습니다. *커리어 사다리의 가장 아래 단이 부러지고 있습니다.*"</div><div class="ql-source">Anthropic Economic Index · Aneesh Raman (LinkedIn)</div></div>
+    <div class="ql-item amber"><div class="ql-text">"AI 자동화의 *거시 TFP 효과는 +0.66%*에 그칠 가능성이 높습니다. 미시 폭발과 거시 미미의 간격이 큽니다."</div><div class="ql-source">Acemoglu · 2024 NBER</div></div>
+    <div class="ql-item amber"><div class="ql-text">"콜센터 평균 +14%, *신입 +34%*. 다만 *현대해상 콜센터*는 AI 도입 후 직무 전환된 7명 *전원 퇴사*. 변화 관리 부재의 그림자."</div><div class="ql-source">Brynjolfsson·Li·Raymond (QJE 2025) · 한국 산업 보도</div></div>
+  </div>
+  <div class="page-num mono">020 / 038</div>
   <div class="page-section mono">PART 2 / 20</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -674,13 +632,17 @@
   </div>
 </section>
 
-<section class="slide quote" id="s21" data-n="21">
-  <div class="big-quote amber">"</div>
-  <p class="quote-text">인프라는 이미 깔렸다.<br>다음은 사람의 차례다.</p>
+<!-- 21 SIG II -->
+<section class="slide content" id="s21" data-n="21">
+  <div class="eyebrow amber">★ SIG ASSET · II</div>
+  <h2 class="content-title">시리즈 II의 시그니처 자산</h2>
   <div class="neon-bar amber small"></div>
-  <p class="quote-by">— 코드 너머의 직업들 (II)</p>
-  
-  <div class="page-num mono">021 / 036</div>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-num mono amber">01</div><div class="card-h">17개 자리 카탈로그</div><div class="card-sub">본론 5 + 부록 12. AI 시대 새 직업의 *카탈로그*가 한 권에. 각 직군의 *한국 도착 단계*까지 표기.</div></div>
+    <div class="card"><div class="card-num mono amber">02</div><div class="card-h">현직별 전환 매트릭스</div><div class="card-sub">백엔드 → Applied AI / SI 컨설턴트 → FDE / QA → Eval / SRE → AgentOps / PM → AI PM. 현직별 *가장 가까운 점프*.</div></div>
+    <div class="card"><div class="card-num mono amber">03</div><div class="card-h">90일 플랜 — 자가진단 → 학습 → 실전</div><div class="card-sub">두려움을 *일정표*로 바꾸는 첫 90일 가이드. 시리즈 I의 *5C 프레임*과 짝지어 행동으로 이어짐.</div></div>
+  </div>
+  <div class="page-num mono">021 / 038</div>
   <div class="page-section mono">PART 2 / 21</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -688,28 +650,13 @@
   </div>
 </section>
 
-<section class="slide content" id="s22" data-n="22">
-  <div class="eyebrow cyan">NEXT</div>
-  <h2 class="content-title">직업편 → 다음 권으로</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">자리(외형)가 생기면, 자리들의 환경(조직)이 다음</div>
-        <div class="card-sub">개인의 자리에서 자리들이 모인 곳 — 조직으로 시야 확장.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">그래서 III — 코드 너머의 조직</div>
-        <div class="card-sub">AX 시대에 일과 조직을 다시 짜는 매뉴얼.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">'어떤 자리에서 살아남을까' → '어떤 조직으로 살아남을까'</div>
-        <div class="card-sub">질문의 단위가 자리에서 조직으로 옮겨간다.</div>
-      </div></div>
-  
-  <div class="page-num mono">022 / 036</div>
+<!-- 22 BRIDGE II→III -->
+<section class="slide quote" id="s22" data-n="22">
+  <div class="big-quote amber">"</div>
+  <p class="quote-text">자리가 만들어지면<br>그 자리들이 모여 조직이 됩니다.<br>다음은 환경 — 코드 너머의 조직.</p>
+  <div class="neon-bar amber small"></div>
+  <p class="quote-by">— 시리즈 II → III 다리</p>
+  <div class="page-num mono">022 / 038</div>
   <div class="page-section mono">PART 2 / 22</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -717,6 +664,7 @@
   </div>
 </section>
 
+<!-- 23 PART III DIVIDER -->
 <section class="slide divider" id="s23" data-n="23">
   <div class="div-grid">
     <div class="div-left">
@@ -726,11 +674,10 @@
     <div class="div-right">
       <div class="neon-bar mint small"></div>
       <h2 class="div-title">코드 너머의 조직</h2>
-      <p class="div-sub">사람의 환경 — 어떤 조직으로 살아남을까</p>
+      <p class="div-sub">사람의 *환경* — 어떤 조직으로 살아남을까. *빅4의 결론을 한국 시장 매뉴얼로* 옮긴 자리.</p>
     </div>
   </div>
-  
-  <div class="page-num mono">023 / 036</div>
+  <div class="page-num mono">023 / 038</div>
   <div class="page-section mono">PART 3 / 23</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -738,13 +685,13 @@
   </div>
 </section>
 
+<!-- 24 KEY QUOTE III -->
 <section class="slide quote" id="s24" data-n="24">
   <div class="big-quote mint">"</div>
   <p class="quote-text">AX는 기술 도입이 아니라<br>일과 조직의 재설계다.</p>
   <div class="neon-bar mint small"></div>
-  <p class="quote-by">— 조직편 핵심 메시지 — 빅4의 한 줄</p>
-  
-  <div class="page-num mono">024 / 036</div>
+  <p class="quote-by">— McKinsey · BCG · Microsoft · Deloitte · 빅4의 *일치된* 결론</p>
+  <div class="page-num mono">024 / 038</div>
   <div class="page-section mono">PART 3 / 24</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -752,16 +699,23 @@
   </div>
 </section>
 
+<!-- 25 AX vs DX -->
 <section class="slide content" id="s25" data-n="25">
-  <div class="eyebrow cyan">DX vs AX</div>
-  <h2 class="content-title">AX vs DX — 같아 보이지만 본질이 다른</h2>
-  <div class="neon-bar cyan small"></div>
-  <table class="data">
-    <thead><tr><th>축</th><th>DX</th><th>AX</th></tr></thead>
-    <tbody><tr><th>출발점</th><td>시스템·데이터 디지털화</td><td>사람·일·조직 재설계</td></tr><tr><th>성공 기준</th><td>시스템 도입·전환 완료</td><td>결과 KPI 개선</td></tr><tr><th>주체</th><td>IT·시스템 부서 주도</td><td>비즈니스·HR·Tech 공동</td></tr><tr><th>실패 패턴</th><td>도입했는데 안 쓴다</td><td>도입했는데 가치를 못 만든다</td></tr></tbody>
+  <div class="eyebrow mint">AX vs DX</div>
+  <h2 class="content-title">AX는 DX가 아니다 — 결과 중심의 재설계</h2>
+  <div class="neon-bar mint small"></div>
+  <table class="compact">
+    <thead><tr><th>축</th><th>DX (Digital Transformation)</th><th>AX (AI Transformation)</th></tr></thead>
+    <tbody>
+      <tr><th>출발점</th><td>시스템·데이터 디지털화</td><td>사람·일·조직 재설계</td></tr>
+      <tr><th>성공 기준</th><td>시스템 도입·전환 완료</td><td>*결과 KPI* 개선</td></tr>
+      <tr><th>주체</th><td>IT·시스템 부서 주도</td><td>비즈니스·HR·Tech 공동</td></tr>
+      <tr><th>실패 패턴</th><td>도입했는데 *안 쓴다*</td><td>도입했는데 *가치를 못 만든다*</td></tr>
+      <tr><th>한국 단어</th><td>"전사 시스템 구축"</td><td>"일하는 방식 재설계"</td></tr>
+    </tbody>
   </table>
-  
-  <div class="page-num mono">025 / 036</div>
+  <p class="content-sub" style="margin-top:16px;">Tobi Lütke (Shopify) 메모: *"AI로 못 하는 일임을 증명하기 전엔 헤드카운트 말 마라."* AX의 *결과 중심* 입장을 압축.</p>
+  <div class="page-num mono">025 / 038</div>
   <div class="page-section mono">PART 3 / 25</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -769,28 +723,22 @@
   </div>
 </section>
 
+<!-- 26 BIG4 -->
 <section class="slide content" id="s26" data-n="26">
-  <div class="eyebrow cyan">THREE TRIES</div>
-  <h2 class="content-title">AX 실행 세 시도</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">새로운 성과 관리 — EPOCH의 한국형 매핑</div>
-        <div class="card-sub">MIT Sloan EPOCH × 한국 직무 유형 3 = 15칸 표.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">새로운 기여자 보상 — Skills-based pay</div>
-        <div class="card-sub">Cornell 2025 인과 카드. 직무급 → 스킬급 부분 전환.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">Skill Marketplace ⭐ — 사람·일·스킬의 매칭 시장</div>
-        <div class="card-sub">Schneider·Unilever 교과서와 한국의 짝 — 한국형 ITM 첫 매뉴얼.</div>
-      </div></div>
-  
-  <div class="page-num mono">026 / 036</div>
+  <div class="eyebrow mint">BIG 4 · CONSENSUS</div>
+  <h2 class="content-title">빅4의 일치된 결론 — 한 표에</h2>
+  <div class="neon-bar mint small"></div>
+  <p class="content-sub">McKinsey·BCG·Microsoft·Deloitte가 *같은 분기에 같은 결론*을 던졌습니다. 도입은 빠르지만, *가치는 워크플로우 재설계·매니저 재정의·인재 시장에서* 나옵니다.</p>
+  <table class="compact">
+    <thead><tr><th>빅4</th><th>핵심 수치</th><th>한 줄 결론</th></tr></thead>
+    <tbody>
+      <tr><th>McKinsey</th><td><span class="num">88% 도입 / 39% EBIT 효과 / 21% 워크플로우 재설계</span></td><td>가장 큰 변수는 *workflow redesign*. 고성과 기업 AI ROI는 평균의 2.8배.</td></tr>
+      <tr><th>BCG</th><td><span class="num">60% 가치 실패 / 5% future-built</span></td><td>*10-20-70 framework* — 알고리즘 10·기술 20·*사람과 프로세스 70*.</td></tr>
+      <tr><th>Microsoft</th><td><span class="num">80% 시간빚 / 67% vs 40%</span></td><td>직원 80%가 시간빚. 에이전트 친숙도 *27%p* 격차.</td></tr>
+      <tr><th>Deloitte</th><td><span class="num">93% 인식 / 19% 실행 · 73% / 7%</span></td><td>직무 구조·매니저 재정의 모두 *인식과 실행의 격차*가 매우 큼.</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">026 / 038</div>
   <div class="page-section mono">PART 3 / 26</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -798,28 +746,19 @@
   </div>
 </section>
 
+<!-- 27 KOREA SIGNALS -->
 <section class="slide content" id="s27" data-n="27">
-  <div class="eyebrow cyan">★ SIGNATURE</div>
-  <h2 class="content-title">Skill Marketplace ⭐ — 본서의 정점</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">Internal Talent Marketplace (ITM)</div>
-        <div class="card-sub">사람의 자리가 직무 명패 → 스킬 묶음으로 단위 전환.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">Schneider Open Talent Market · Unilever Flex Experiences</div>
-        <div class="card-sub">글로벌 표준 사례. 사내 이동률 +30% · 채용 비용 절감.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">한국의 짝 — 삼성 잡포스팅 + 롯데 직무기반</div>
-        <div class="card-sub">'직무기반 + 잡포스팅 + 스킬 매트릭스' 결합 = 한국형.</div>
-      </div></div>
-  
-  <div class="page-num mono">027 / 036</div>
+  <div class="eyebrow mint">KOREA · 2026</div>
+  <h2 class="content-title">한국이 보내는 신호 — 발표는 풍부, 실행은 진행 중</h2>
+  <div class="neon-bar mint small"></div>
+  <div class="grid grid-4">
+    <div class="card"><div class="card-big-num mono mint">+83.6%</div><div class="card-big-label">정부 2026 AX 예산</div><div class="card-sub">4,552억 원. 정책 차원의 *큰 시그널*.</div></div>
+    <div class="card"><div class="card-big-num mono mint">95.3%</div><div class="card-big-label">롯데 직무기반 인사 동의율</div><div class="card-sub">박두환 사장 승진까지 이어진 *한국형 future-built 후보*.</div></div>
+    <div class="card"><div class="card-big-num mono amber">7명 / 7명</div><div class="card-big-label">현대해상 콜센터 전원 퇴사</div><div class="card-sub">AI 도입 후 직무 전환된 7명 *전원 퇴사*. *변화 관리 실패*의 그림자.</div></div>
+    <div class="card"><div class="card-big-num mono mint">3社 동시</div><div class="card-big-label">삼성SDS·LG CNS·SK 동시 AX 인사</div><div class="card-sub">2025/12 같은 분기 인사. *한국의 분기점* 시그널.</div></div>
+  </div>
+  <p class="content-sub" style="margin-top:20px;">매니저 재정의의 한국 표준은 *DEVOCEAN의 5단계 내재화 모델*(학습 → PoC → 팀 체감 → 제도화 → 문화)이 가장 가깝습니다.</p>
+  <div class="page-num mono">027 / 038</div>
   <div class="page-section mono">PART 3 / 27</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -827,28 +766,18 @@
   </div>
 </section>
 
+<!-- 28 THREE TRIES -->
 <section class="slide content" id="s28" data-n="28">
-  <div class="eyebrow cyan">SIG ASSET</div>
-  <h2 class="content-title">조직편의 시그니처 자산</h2>
-  <div class="neon-bar cyan small"></div>
+  <div class="eyebrow mint">THREE TRIES</div>
+  <h2 class="content-title">AX 실행 세 시도 — 평가 · 보상 · 시장</h2>
+  <div class="neon-bar mint small"></div>
+  <p class="content-sub">시리즈 III의 PART 3가 *AX 실행 세 시도*. 학술 70% 받침 위에 *책의 30% 기여*를 더한 자리. 평가 → 보상 → 시장의 *짝지어진 세 패치*.</p>
   <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">EPOCH 한국형 매핑 (Ch 7) — 15칸 표</div>
-        <div class="card-sub">HR·Tech 공동 검수 도구. KPI 재설계의 출발점.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">Cornell 2025 인과 카드 (Ch 8)</div>
-        <div class="card-sub">성과 보상 → 학습 → AI 채택 → 생산성 4단계 인과 사슬.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">Schneider·Unilever ↔ 삼성·롯데 짝 비교 (Ch 9)</div>
-        <div class="card-sub">한국형 ITM의 첫 본격 매뉴얼.</div>
-      </div></div>
-  
-  <div class="page-num mono">028 / 036</div>
+    <div class="card"><div class="card-num mono mint">Try 1</div><div class="card-h">새로운 *성과 관리* — EPOCH의 한국형 매핑</div><div class="card-sub">MIT Sloan *EPOCH 5요소* × 한국 직무 유형 3 = *15칸 표*. KPI 재설계의 출발점.</div></div>
+    <div class="card"><div class="card-num mono mint">Try 2</div><div class="card-h">새로운 *기여자 보상* — Skills-based pay</div><div class="card-sub">Cornell 2025 인과 카드. *성과 보상 → AI 채택* 인과 발견. 직무급 → 스킬급 부분 전환.</div></div>
+    <div class="card"><div class="card-num mono mint">Try 3 ⭐</div><div class="card-h">*Skill Marketplace = ITM* — 사람·일의 매칭 시장</div><div class="card-sub">Schneider·Unilever의 교과서 + *삼성 잡포스팅·롯데 직무기반*의 한국 짝.</div></div>
+  </div>
+  <div class="page-num mono">028 / 038</div>
   <div class="page-section mono">PART 3 / 28</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -856,13 +785,23 @@
   </div>
 </section>
 
-<section class="slide quote" id="s29" data-n="29">
-  <div class="big-quote mint">"</div>
-  <p class="quote-text">발표는 빠르고 실행은 느립니다.<br>이 책은 진심 도입한 37%의 행동 양식 매뉴얼입니다.</p>
+<!-- 29 EPOCH KOREAN MAPPING -->
+<section class="slide content" id="s29" data-n="29">
+  <div class="eyebrow mint">★ EPOCH 한국형 매핑</div>
+  <h2 class="content-title">시리즈 III 시그니처 자산 ① — 15칸 평가표</h2>
   <div class="neon-bar mint small"></div>
-  <p class="quote-by">— 코드 너머의 조직 (III)</p>
-  
-  <div class="page-num mono">029 / 036</div>
+  <p class="content-sub">MIT Sloan *EPOCH 5요소* × 한국 *직무 유형 3*(지식 근로자·고객 응대·관리자) = *15칸*의 한국형 평가표. 학술 70% + 책의 기여 30%.</p>
+  <table class="compact">
+    <thead><tr><th>EPOCH</th><th>지식 근로자</th><th>고객 응대</th><th>관리자</th></tr></thead>
+    <tbody>
+      <tr><th>공감 (Empathy)</th><td>피드백 품질·동료 케어</td><td>고객 정서 인식·복원</td><td>팀원 상태 파악</td></tr>
+      <tr><th>현장 존재감 (Presence)</th><td>오프라인 협업 기여</td><td>현장 응대·물리적 임장</td><td>현장 코칭·1:1</td></tr>
+      <tr><th>판단 (Opinion)</th><td>가치 충돌 해결</td><td>예외 처리·정책 해석</td><td>우선순위·자원 배분</td></tr>
+      <tr><th>창의성 (Creativity)</th><td>새 조합 제안</td><td>고객 케이스 재구성</td><td>팀 운영 패턴 혁신</td></tr>
+      <tr><th>비전 (Hope)</th><td>장기 가치 제안</td><td>고객 미래 시나리오</td><td>팀 비전 정렬</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">029 / 038</div>
   <div class="page-section mono">PART 3 / 29</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -870,7 +809,76 @@
   </div>
 </section>
 
-<section class="slide divider" id="s30" data-n="30">
+<!-- 30 CORNELL CAUSAL CARD -->
+<section class="slide content" id="s30" data-n="30">
+  <div class="eyebrow mint">★ CORNELL 2025</div>
+  <h2 class="content-title">시리즈 III 시그니처 자산 ② — 인과 카드</h2>
+  <div class="neon-bar mint small"></div>
+  <p class="content-sub">Wiernsperger 외 *Management Science* (2025). *성과 기반 보상이 AI 채택을 유의미하게 늘림*. 1980~90년대 *algorithm aversion* 결론을 정반대로 뒤집은 자리. *한국 재현 미검증*은 정직하게 본문에 명시.</p>
+  <div class="grid grid-4">
+    <div class="card"><div class="card-num mono mint">단계 ①</div><div class="card-h">성과 보상 도입</div><div class="card-sub">개인 단위 성과 가시화·재정적 인센티브.</div></div>
+    <div class="card"><div class="card-num mono mint">단계 ②</div><div class="card-h">학습 의지 증가</div><div class="card-sub">AI 도구를 *자기 비용으로* 배우려는 동인.</div></div>
+    <div class="card"><div class="card-num mono mint">단계 ③</div><div class="card-h">AI 채택률 상승</div><div class="card-sub">*algorithm aversion*이 뒤집어진 자리.</div></div>
+    <div class="card"><div class="card-num mono mint">단계 ④</div><div class="card-h">생산성 상승</div><div class="card-sub">콜센터 평균 +14%, 신입 +34% (Brynjolfsson QJE 2025).</div></div>
+  </div>
+  <div class="page-num mono">030 / 038</div>
+  <div class="page-section mono">PART 3 / 30</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 31 SKILL MARKETPLACE -->
+<section class="slide content" id="s31" data-n="31">
+  <div class="eyebrow mint">★ SKILL MARKETPLACE</div>
+  <h2 class="content-title">시리즈 III 시그니처 자산 ③ — Skill Marketplace = ITM</h2>
+  <div class="neon-bar mint small"></div>
+  <p class="content-sub">*Internal Talent Marketplace*(사내 인재 시장). 같은 개념을 한국 독자에게 더 친근하게 *Skill Marketplace*로 풀어 씀. 사내에 *작은 일감과 사람*을 사고파는 시장. *gig*(긱)은 6주~6개월짜리 사내 프로젝트.</p>
+  <table class="compact">
+    <thead><tr><th>회사</th><th>수치</th><th>한 줄</th></tr></thead>
+    <tbody>
+      <tr><th>Schneider Open Talent Market</th><td><span class="num">550k 시간 unlock · $15M 절감 · 89% 채택 · 12,000 멘토</span></td><td>글로벌 ITM 표준 사례.</td></tr>
+      <tr><th>Unilever FLEX Experiences</th><td><span class="num">700k 시간 · 90,000명 · 95% · 41% 생산성</span></td><td>대규모 적용의 교과서.</td></tr>
+      <tr><th>삼성 잡포스팅</th><td>사내 공모 + 직무 이동</td><td>한국에서 ITM에 *가장 가까운* 사례.</td></tr>
+      <tr><th>롯데 직무기반 인사제도</th><td><span class="num">동의율 95.3%</span></td><td>스킬 매트릭스 + 직무급 부분 전환.</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">031 / 038</div>
+  <div class="page-section mono">PART 3 / 31</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 32 BALANCE III - 9 THINGS -->
+<section class="slide content" id="s32" data-n="32">
+  <div class="eyebrow amber">BALANCE · III · 막간</div>
+  <h2 class="content-title">우리가 틀릴 수 있는 9가지 — 정직한 한 페이지</h2>
+  <div class="neon-bar amber small"></div>
+  <p class="content-sub">시리즈 III의 *가장 정직한 자리*가 막간. 본서 가설을 *반박하는 학술·산업 자료 9개*. 책을 *광고가 아닌 매뉴얼*로 만드는 장치.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-num mono amber">①</div><div class="card-h">Vaccaro 2024 — 시너지 평균 부재</div><div class="card-sub">*Nature Human Behaviour*. 인간-AI 결합의 시너지가 평균적으로는 발생하지 않음.</div></div>
+    <div class="card"><div class="card-num mono amber">②</div><div class="card-h">Fuller·Raman 2024 — Skills-based 3.6% 실행</div><div class="card-sub">선언 vs 실행의 큰 격차. 한국도 다르지 않을 가능성.</div></div>
+    <div class="card"><div class="card-num mono amber">③</div><div class="card-h">Vallas·Schor 2020 — 플랫폼의 그림자</div><div class="card-sub">ITM의 *플랫폼화 위험*. 사내 긱이커머스화의 디스토피아.</div></div>
+    <div class="card"><div class="card-num mono amber">④</div><div class="card-h">Anthropic Index — 신입 -14%</div><div class="card-sub">사다리의 가장 아래 단이 부러지는 신호.</div></div>
+    <div class="card"><div class="card-num mono amber">⑤</div><div class="card-h">Hackman 1977 — 자율팀 5조건</div><div class="card-sub">5조건이 *모두* 갖춰져야 효과. 일부만 적용 시 역효과.</div></div>
+    <div class="card"><div class="card-num mono amber">⑥</div><div class="card-h">Acemoglu 2024 — TFP 0.66%</div><div class="card-sub">거시 효과는 미미할 가능성. 미시 폭발과 괴리.</div></div>
+    <div class="card"><div class="card-num mono amber">⑦</div><div class="card-h">양극화</div><div class="card-sub">중간 일자리가 가장 빨리 사라지는 패턴.</div></div>
+    <div class="card"><div class="card-num mono amber">⑧</div><div class="card-h">보상의 선별 효과</div><div class="card-sub">성과 보상이 *학습 의지가 높은 사람*을 끌어모으는 선별 효과일 수도.</div></div>
+    <div class="card"><div class="card-num mono amber">⑨</div><div class="card-h">Cornell — 한국 미검증</div><div class="card-sub">한국 시장 *재현 검증* 미완. 1~2년의 시점에 *2판 보강*.</div></div>
+  </div>
+  <div class="page-num mono">032 / 038</div>
+  <div class="page-section mono">PART 3 / 32</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 33 PART IV DIVIDER -->
+<section class="slide divider" id="s33" data-n="33">
   <div class="div-grid">
     <div class="div-left">
       <div class="eyebrow magenta">PART IV</div>
@@ -882,80 +890,7 @@
       <p class="div-sub">내면 · 외형 · 환경 — 세 풍경이 만나는 한 문장.</p>
     </div>
   </div>
-  
-  <div class="page-num mono">030 / 036</div>
-  <div class="page-section mono">PART 4 / 30</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide content" id="s31" data-n="31">
-  <div class="eyebrow cyan">THREE → ONE</div>
-  <h2 class="content-title">세 권의 통합 한 문장</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">내면 (I) — 어떤 사람으로 살아남을까</div>
-        <div class="card-sub">EPOCH 5요소. 살아남는 사람의 5가지 역량.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">외형 (II) — 어떤 자리에서 살아남을까</div>
-        <div class="card-sub">5개 새 직업 + 현직별 전환 + 90일 플랜.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">환경 (III) — 어떤 조직으로 살아남을까</div>
-        <div class="card-sub">AX 실행 세 시도 + Skill Marketplace.</div>
-      </div></div>
-  
-  <div class="page-num mono">031 / 036</div>
-  <div class="page-section mono">PART 4 / 31</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide quote" id="s32" data-n="32">
-  <div class="big-quote magenta">"</div>
-  <p class="quote-text">코드 너머의 시대를 사는 사람의 자리에서,<br>코드 너머의 직업이 자라고,<br>코드 너머의 조직이 자란다.</p>
-  <div class="neon-bar magenta small"></div>
-  <p class="quote-by">— 시리즈 한 줄 회수</p>
-  
-  <div class="page-num mono">032 / 036</div>
-  <div class="page-section mono">PART 4 / 32</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide content" id="s33" data-n="33">
-  <div class="eyebrow cyan">RECOMMEND</div>
-  <h2 class="content-title">동료에게 어떻게 권할 것인가</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-3">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">스스로 길을 잡으려는 사람 → I 시대편</div>
-        <div class="card-sub">내면이 흔들릴 때 — 어떤 사람으로 사는가의 답.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">자리·커리어를 다시 고를 사람 → II 직업편</div>
-        <div class="card-sub">전환·이직을 고민할 때 — 5개 직업과 90일 플랜.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">팀·조직을 책임지는 리더 → III 조직편</div>
-        <div class="card-sub">HR·Tech 리더가 같이 읽는 매뉴얼. AX 실행 세 시도.</div>
-      </div></div>
-  
-  <div class="page-num mono">033 / 036</div>
+  <div class="page-num mono">033 / 038</div>
   <div class="page-section mono">PART 4 / 33</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
@@ -963,55 +898,85 @@
   </div>
 </section>
 
+<!-- 34 SIGNATURE PAIRING -->
 <section class="slide content" id="s34" data-n="34">
-  <div class="eyebrow cyan">KEY QUOTES</div>
-  <h2 class="content-title">부록 — 시리즈 핵심 인용 모음</h2>
-  <div class="neon-bar cyan small"></div>
-  <div class="grid grid-4">
-      <div class="card">
-        <div class="card-num mono">01</div>
-        <div class="card-h">'기술이 빠를수록 사람이 어떤 사람으로 사는가가 더 또렷이 보인다.' (I)</div>
-        <div class="card-sub">사람의 내면을 다시 일의 중심으로 가져온다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">02</div>
-        <div class="card-h">'반도체는 먼저 갔고, 사람은 따라간다. 그리고 사람의 자리는 새로 만들어진다.' (II)</div>
-        <div class="card-sub">패턴은 반복된다. 인프라 뒤에 사람이 온다.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">03</div>
-        <div class="card-h">'AX는 기술 도입이 아니라 일과 조직의 재설계다.' (III · 빅4 합의)</div>
-        <div class="card-sub">McKinsey·BCG·Microsoft·Deloitte의 같은 결론.</div>
-      </div>
-      <div class="card">
-        <div class="card-num mono">04</div>
-        <div class="card-h">'두려움에서 일정표로.' (II)</div>
-        <div class="card-sub">막연한 불안을 90일 체크리스트로 바꾸는 책의 약속.</div>
-      </div></div>
-  
-  <div class="page-num mono">034 / 036</div>
-  <div class="page-section mono">APPENDIX / 34</div>
-  <div class="page-footer">
-    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
-    <span>김상기 · ksangki/beyond-code-summary</span>
-  </div>
-</section>
-
-<section class="slide quote" id="s35" data-n="35">
-  <div class="big-quote magenta">"</div>
-  <p class="quote-text">이 요약본은 시리즈의 대체가 아닙니다.<br>입구이자 출구입니다.<br>어느 부의 한 줄이 더 읽고 싶다는 마음을 일으키면,<br>그 권을 펼치는 것이 자연스러운 다음 단계입니다.</p>
+  <div class="eyebrow magenta">PAIRING</div>
+  <h2 class="content-title">시리즈 종합 — 시그니처가 짝지어진 풍경</h2>
   <div class="neon-bar magenta small"></div>
-  <p class="quote-by">— 에필로그 — 다음으로</p>
-  
-  <div class="page-num mono">035 / 036</div>
-  <div class="page-section mono">EPILOGUE / 35</div>
+  <table class="compact">
+    <thead><tr><th>권</th><th>차원</th><th>질문</th><th>한 줄 답</th><th>시그니처 자산</th></tr></thead>
+    <tbody>
+      <tr><th>I. 시대</th><td>내면</td><td>어떤 사람으로 살아남을까</td><td>*코드 너머의 역량·태도*</td><td>문제 발견의 기술 · 5C 프레임</td></tr>
+      <tr><th>II. 직업들</th><td>외형</td><td>어떤 자리에서 살아남을까</td><td>*코드 너머의 새 직업*</td><td>5개 직업 도감 · 17개 자리 카탈로그 · 90일 플랜</td></tr>
+      <tr><th>III. 조직</th><td>환경</td><td>어떤 조직으로 살아남을까</td><td>*코드 너머의 일·조직 재설계*</td><td>EPOCH 한국형 매핑 · Cornell 인과 카드 · Skill Marketplace</td></tr>
+    </tbody>
+  </table>
+  <p class="content-sub" style="margin-top:16px;">짝짓기: I의 *5C* ↔ III의 *EPOCH 5요소* (인간 고유 역량 다섯 축). II의 *17개 카탈로그* ↔ III의 *Skill Marketplace*. I의 *문제 발견의 기술* ↔ III의 *질문 설계 능력*.</p>
+  <div class="page-num mono">034 / 038</div>
+  <div class="page-section mono">PART 4 / 34</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
     <span>김상기 · ksangki/beyond-code-summary</span>
   </div>
 </section>
 
-<section class="slide cover thanks" id="s36" data-n="36">
+<!-- 35 TIME CURVE -->
+<section class="slide content" id="s35" data-n="35">
+  <div class="eyebrow magenta">TIME CURVE</div>
+  <h2 class="content-title">세 권의 시간 곡선 — 오늘 · 1~3년 · 3~7년</h2>
+  <div class="neon-bar magenta small"></div>
+  <p class="content-sub">세 권은 *시간 단위가 다른 변화*를 같은 방향에서 그렸습니다. *오늘의 내면 변화가 1~3년의 직업 변화로, 그리고 3~7년의 조직 변화로 자란다*는 곡선.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-num mono cyan">오늘 (I · 내면)</div><div class="card-h">코드만 잘 짜면 되는 시대가 끝났다는 인식의 공유</div><div class="card-sub">한국 개발자·비개발자 사이에서 *5C 프레임·EPOCH 5요소*가 일상 언어로 자리잡는 시점.</div></div>
+    <div class="card"><div class="card-num mono amber">1~3년 (II · 외형)</div><div class="card-h">5개 새 직업이 한국 채용 시장에 정착</div><div class="card-sub">AI PM·FDE·Applied AI·AgentOps·Eval Engineer가 *정식 직군명*으로 자리잡는 시점.</div></div>
+    <div class="card"><div class="card-num mono mint">3~7년 (III · 환경)</div><div class="card-h">한국 대기업 중 일부가 Schneider 수준의 ITM 가동</div><div class="card-sub">*EPOCH 기반 평가표*가 정착, *Cornell 인과 카드*가 한국 평가 문화에서 재현되는 시점.</div></div>
+  </div>
+  <div class="page-num mono">035 / 038</div>
+  <div class="page-section mono">PART 4 / 35</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 36 HOW TO RECOMMEND -->
+<section class="slide content" id="s36" data-n="36">
+  <div class="eyebrow magenta">RECOMMEND</div>
+  <h2 class="content-title">동료에게 어떻게 권할 것인가</h2>
+  <div class="neon-bar magenta small"></div>
+  <table class="compact">
+    <thead><tr><th>이 분에게는</th><th>권할 권</th><th>한 줄 이유</th></tr></thead>
+    <tbody>
+      <tr><th>스스로 길을 잡으려는 분</th><td><strong>I · 시대</strong></td><td>내면이 흔들릴 때 — *어떤 사람으로 사는가*의 답.</td></tr>
+      <tr><th>커리어 전환·이직을 고민 중</th><td><strong>II · 직업들</strong></td><td>5개 새 직업 도감 + 현직별 전환 + 90일 플랜.</td></tr>
+      <tr><th>팀·조직을 책임지는 리더</th><td><strong>III · 조직</strong></td><td>HR 리더와 기술 리더가 *같이 읽는* AX 매뉴얼.</td></tr>
+      <tr><th>시간이 1시간뿐인 분</th><td><strong>요약본 (본서)</strong></td><td>세 권을 한 권에. 어디부터 펼칠지의 안내.</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num mono">036 / 038</div>
+  <div class="page-section mono">PART 4 / 36</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 37 SERIES ONE-LINER -->
+<section class="slide quote" id="s37" data-n="37">
+  <div class="big-quote magenta">"</div>
+  <p class="quote-text">코드 너머의 시대를 사는 사람의 자리에서,<br>코드 너머의 직업이 자라고,<br>코드 너머의 조직이 자란다.</p>
+  <div class="neon-bar magenta small"></div>
+  <p class="quote-by">— 시리즈 한 줄 회수 · 요약본 마지막 문장</p>
+  <div class="page-num mono">037 / 038</div>
+  <div class="page-section mono">PART 4 / 37</div>
+  <div class="page-footer">
+    <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
+    <span>김상기 · ksangki/beyond-code-summary</span>
+  </div>
+</section>
+
+<!-- 38 THANKS -->
+<section class="slide cover thanks" id="s38" data-n="38">
   <div class="corner tl"></div><div class="corner tr"></div>
   <div class="corner bl"></div><div class="corner br"></div>
   <div class="cover-wrap">
@@ -1032,9 +997,8 @@
       <div><span class="k magenta">AUTHOR</span><span>김상기 · 2026 · v1.1.0</span></div>
     </div>
   </div>
-  
-  <div class="page-num mono">036 / 036</div>
-  <div class="page-section mono">END / 36</div>
+  <div class="page-num mono">038 / 038</div>
+  <div class="page-section mono">END / 38</div>
   <div class="page-footer">
     <span>코드 너머의 시리즈 요약본 · 세 권의 결을 한 권에</span>
     <span>김상기 · ksangki/beyond-code-summary</span>
