@@ -9,6 +9,7 @@
 ## 읽기
 
 - **웹 버전**: [GitHub Pages에서 읽기](https://ksangki.github.io/beyond-code-summary/)
+- **오프닝 영상**: [60초 모션그래픽](https://ksangki.github.io/beyond-code-summary/media/opening.mp4) · 웹 버전 첫 화면에도 실려 있다
 - **EPUB**: [`코드-너머의-시리즈-v1.1.0.epub`](코드-너머의-시리즈-v1.1.0.epub) 다운로드
 
 ## 목차
