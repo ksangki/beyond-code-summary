@@ -21,7 +21,7 @@
 
 ### 5C 프레임 (Microsoft)
 
-Curiosity · Critical Thinking · Creativity · Communication · Character. AI 시대 인간 고유 역량의 다섯 축.
+Curiosity · Critical Thinking · Creativity · Communication · Character. AI 시대 인간 고유 역량 다섯 가지.
 
 ---
 
@@ -125,6 +125,6 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 | I. 코드 너머의 시대 | https://ksangki.github.io/beyond-code-era/ | 코드-너머의-시대-v1.0.0.epub |
 | II. 코드 너머의 직업들 | https://ksangki.github.io/beyond-code-jobs/ | 코드-너머의-직업들-v1.1.0.epub |
 | III. 코드 너머의 조직 | https://ksangki.github.io/beyond-code-org/ | 코드-너머의-조직-v1.2.0.epub |
-| 요약본 (본서) | https://ksangki.github.io/beyond-code-summary/ | 코드-너머의-시리즈-v1.1.0.epub |
+| 요약본 (본서) | https://ksangki.github.io/beyond-code-summary/ | 코드-너머의-시리즈-v1.1.1.epub |
 
 요약본 한 줄로 시리즈를 만나신 다음, *더 자세히 읽고 싶은 권*을 직접 펼치시기 바랍니다.
