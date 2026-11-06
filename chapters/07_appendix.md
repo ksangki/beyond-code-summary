@@ -4,7 +4,7 @@
 
 ---
 
-## 시리즈 I — 시대
+## 시리즈 I: 시대
 
 ### 핵심 메시지
 
@@ -25,13 +25,13 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 
 ---
 
-## 시리즈 II — 직업들
+## 시리즈 II: 직업들
 
 ### 핵심 메시지
 
-> *"5년 걸리던 AI 작업이 API 문서와 한가한 오후 한 번이면 가능해졌습니다."* — Shawn Wang (Swyx)
+> *"5년 걸리던 AI 작업이 API 문서와 한가한 오후 한 번이면 가능해졌습니다."* (Shawn Wang(Swyx))
 
-> *"Data Scientists answer questions. ML Engineers build systems. AI Engineers ship products."* — Drew Breunig
+> *"Data Scientists answer questions. ML Engineers build systems. AI Engineers ship products."* (Drew Breunig)
 
 ### 시차 데이터
 
@@ -46,7 +46,7 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 - SaaS 멀티플 압축: Cloud 100 평균 EV/Revenue *26x → 20x* (3년 연속 하락).
 - LinkedIn AI Engineer 채용 *+143.2%* (3년).
 - Forward Deployed Engineer 채용 *+1,165% YoY* (Bloomberry).
-- Schneider Open Talent Market — *550,000 시간 unlock, $15M 절감, 89% 채택*.
+- Schneider Open Talent Market: *550,000 시간 unlock, $15M 절감, 89% 채택*.
 
 ### 본론 5개 직업
 
@@ -60,24 +60,24 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 
 ---
 
-## 시리즈 III — 조직
+## 시리즈 III: 조직
 
 ### 본문 용어 정리
 
-- **AX** — AI 시대의 *일과 조직 재설계*.
-- **EPOCH** — 인간 고유 능력 5요소: 공감·현장 존재감·판단·창의성·비전.
-- **ITM(사내 인재 시장) = Skill Marketplace** — 사내에 작은 일감과 사람을 사고파는 시장.
-- **gig** — 작은 단위의 임시 작업. 6주~6개월짜리 사내 프로젝트.
+- **AX**: AI 시대의 *일과 조직 재설계*.
+- **EPOCH**: 인간 고유 능력 5요소: 공감·현장 존재감·판단·창의성·비전.
+- **ITM(사내 인재 시장) = Skill Marketplace**: 사내에 작은 일감과 사람을 사고파는 시장.
+- **gig**: 작은 단위의 임시 작업. 6주~6개월짜리 사내 프로젝트.
 
 ### 핵심 메시지
 
 > *"AX는 기술 도입이 아니라 일과 조직의 재설계다."*
 
-> *"여러분은 미션을 보고 왔습니다. 누가 다트를 던졌다는 이유만으로 우리가 지금의 열 배를 줄 일은 없습니다."* — Dario Amodei (Anthropic CEO)
+> *"여러분은 미션을 보고 왔습니다. 누가 다트를 던졌다는 이유만으로 우리가 지금의 열 배를 줄 일은 없습니다."* (Dario Amodei, Anthropic CEO)
 
-> *"AI 시대 관리자의 가치는 *얼마나 많이 아는가*가 아니라 *무엇을 질문하는가*에서 결정됩니다."* — 한국경제
+> *"AI 시대 관리자의 가치는 *얼마나 많이 아는가*가 아니라 *무엇을 질문하는가*에서 결정됩니다."* (한국경제)
 
-> *"커리어 사다리의 가장 아래 단이 부러지고 있습니다."* — Aneesh Raman (LinkedIn)
+> *"커리어 사다리의 가장 아래 단이 부러지고 있습니다."* (Aneesh Raman, LinkedIn)
 
 ### 빅4의 일치된 결론
 
@@ -88,19 +88,19 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 
 ### 결정적 학술
 
-- *EPOCH* — Loaiza·Rigobon 2024 MIT Sloan. 인간 고유 능력 5요소.
-- *Cornell 2025* — Wiernsperger 외 *Management Science*. 성과 보상이 AI 채택을 *유의미하게 늘림*.
-- *Vaccaro 2024* — *Nature Human Behaviour*. 인간-AI 결합의 *시너지 평균 부재* (균형 자료).
-- *Brynjolfsson·Li·Raymond 2023* — *QJE 2025*. 콜센터 평균 +14%, *신입 +34%*.
-- *Hackman 1977* — 자율팀 *5조건*이 모두 갖춰져야 효과.
+- *EPOCH*: Loaiza·Rigobon 2024 MIT Sloan. 인간 고유 능력 5요소.
+- *Cornell 2025*: Wiernsperger 외 *Management Science*. 성과 보상이 AI 채택을 *유의미하게 늘림*.
+- *Vaccaro 2024*: *Nature Human Behaviour*. 인간-AI 결합의 *시너지 평균 부재* (균형 자료).
+- *Brynjolfsson·Li·Raymond 2023*: *QJE 2025*. 콜센터 평균 +14%, *신입 +34%*.
+- *Hackman 1977*: 자율팀 *5조건*이 모두 갖춰져야 효과.
 
 ### 한국 시장
 
 - 정부 2026 AX 예산 *4,552억* (+83.6%).
 - 삼성SDS·LG CNS·SK 동시 AX 인사 (2025/12).
-- 롯데 직무기반 인사제도 — *동의율 95.3%, 박두환 사장 승진*.
-- 현대해상 콜센터 — *AI 도입 후 직무 전환된 7명 전원 퇴사*.
-- DEVOCEAN의 *AI 5단계 내재화 모델* — 학습 → PoC → 팀 체감 → 제도화 → 문화.
+- 롯데 직무기반 인사제도: *동의율 95.3%, 박두환 사장 승진*.
+- 현대해상 콜센터: *AI 도입 후 직무 전환된 7명 전원 퇴사*.
+- DEVOCEAN의 *AI 5단계 내재화 모델*: 학습 → PoC → 팀 체감 → 제도화 → 문화.
 
 ---
 
@@ -110,21 +110,21 @@ Curiosity · Critical Thinking · Creativity · Communication · Character. AI �
 
 | 권 | 균형 자료 |
 |---|---|
-| I | CNN — *"일자리 소멸은 크게 과장"* / Stanford — 신입 20% 감소 |
-| II | Anthropic Index — *신입 -14% 진입* / Acemoglu 2024 — *TFP 0.66%* |
-| III | Vaccaro 2024 — 시너지 부재 / Fuller·Raman 2024 — *3.6% 실행* / Vallas·Schor 2020 — *플랫폼의 그림자* |
+| I | CNN: *"일자리 소멸은 크게 과장"* / Stanford: 신입 20% 감소 |
+| II | Anthropic Index: *신입 -14% 진입* / Acemoglu 2024: *TFP 0.66%* |
+| III | Vaccaro 2024: 시너지 부재 / Fuller·Raman 2024: *3.6% 실행* / Vallas·Schor 2020: *플랫폼의 그림자* |
 
 세 권 모두 *과장된 낙관과 과장된 비관 사이*에 자리잡은 매뉴얼입니다.
 
 ---
 
-## 원작 세 권 — 어디서 읽나
+## 원작 세 권, 어디서 읽나
 
 | 권 | 라이브 페이지 | EPUB 다운로드 |
 |---|---|---|
 | I. 코드 너머의 시대 | https://ksangki.github.io/beyond-code-era/ | 코드-너머의-시대-v1.0.0.epub |
 | II. 코드 너머의 직업들 | https://ksangki.github.io/beyond-code-jobs/ | 코드-너머의-직업들-v1.1.0.epub |
 | III. 코드 너머의 조직 | https://ksangki.github.io/beyond-code-org/ | 코드-너머의-조직-v1.2.0.epub |
-| 요약본 (본서) | https://ksangki.github.io/beyond-code-summary/ | 코드-너머의-시리즈-v1.1.1.epub |
+| 요약본 (본서) | https://ksangki.github.io/beyond-code-summary/ | 코드-너머의-시리즈-v1.1.2.epub |
 
 요약본 한 줄로 시리즈를 만나신 다음, *더 자세히 읽고 싶은 권*을 직접 펼치시기 바랍니다.

@@ -1,8 +1,8 @@
-# Build Log — 코드 너머의 시리즈 v1.1.1
+# Build Log — 코드 너머의 시리즈 v1.1.2
 
-- **Date:** 2026-10-31T23:55:10Z
-- **Output:** `코드-너머의-시리즈-v1.1.1.epub`
-- **Size:** 111723 bytes
+- **Date:** 2026-11-06T15:55:12Z
+- **Output:** `코드-너머의-시리즈-v1.1.2.epub`
+- **Size:** 120782 bytes
 - **Pandoc exit:** 0
 - **epubcheck:** passed
 - **epubcheck strict:** 1
@@ -14,7 +14,7 @@
 - title: 코드 너머의 시리즈
 - author: 김상기
 - language: ko
-- version: 1.1.1
+- version: 1.1.2
 - pub_date: 2026-05-17
 - identifier: urn:uuid:221ff65b-1ee2-471f-89c3-f2a7b2418bdc
 - license: CC BY-NC-SA 4.0
@@ -22,4 +22,4 @@
 - cover_alt: 코드 너머의 시리즈 표지
 - stylesheet: epub.css
 - harness_version: unknown
-- rights: © 2026 김상기 — Licensed under CC BY-NC-SA 4.0
+- rights: © 2026 김상기. Licensed under CC BY-NC-SA 4.0
